@@ -1,10 +1,24 @@
 import java.util.Scanner;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class SinValidator.
+ *
+ * @author Hy Huynh, Hao Nguyen
+ * @version 1.0
+ */
 public class SinValidator {
 
+/** The sin. */
 private int[] SIN;
 
+/**
+ * Sum digit.
+ *
+ * @param x the x
+ * @return the int
+ */
 private int sumDigit(int x)
 {
 	int result =0;
@@ -17,6 +31,11 @@ private int sumDigit(int x)
 	return result;
 }
 
+	/**
+	 * Instantiates a new sin validator.
+	 *
+	 * @param sin the sin
+	 */
 	public SinValidator(String sin) {
 
 		SIN = new int[9];
@@ -43,16 +62,32 @@ private int sumDigit(int x)
 		}	
 	}
 	
+	/**
+	 * Validate sin.
+	 *
+	 * @return true, if successful
+	 */
 	public boolean validateSin()
 	{
+		int num1 = SIN[0] + SIN[2] + SIN[4] + SIN[6]; 
+		int num2=0, temp=0, result; 
 		
-		// THIS METHOD DOESN'T WORK. STUDENTS ARE EXPECTED TO COMPLTETE THIS METHOD
-
-        
-		return false;
+		for(int i=1; i<9; i+=2 ) {
+			temp= SIN[i]*2;
+			num2+= temp%10 + (int)temp/10; 
+		}
+		
+		result = 10 - ((num1 + num2)%10);
+		
+		return result==SIN[8];
 		
 	}
 
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		// Read user input
 	
