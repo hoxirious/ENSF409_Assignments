@@ -2,6 +2,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+/**
+ * The Class Shop.
+ */
 public class Shop {
 
 	/*
@@ -12,6 +16,9 @@ public class Shop {
 	 * creation of an order as shown in lab 2) . 6. Quit
 	 */
 
+	/**
+	 * Press enter.
+	 */
 	public static void pressEnter() {
 		System.out.println("Press \"ENTER\" to continue...");
 		try {
@@ -27,6 +34,11 @@ public class Shop {
 		}
 	}
 
+	/**
+	 * Main menu.
+	 *
+	 * @return the int
+	 */
 	public static int mainMenu() {
 		Scanner input = new Scanner(System.in);
 		int i = input.nextInt();
@@ -34,6 +46,11 @@ public class Shop {
 		return i;
 	}
 
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		Inventory shop = new Inventory();
 

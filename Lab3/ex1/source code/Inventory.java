@@ -172,7 +172,7 @@ public class Inventory {
 	/**
 	 * Decrease quantity.
 	 *
-	 * @param name the name
+	 * @param ID the ID
 	 * @param lost the lost
 	 */
 	public void decreaseQuantity(int ID, int lost) {
