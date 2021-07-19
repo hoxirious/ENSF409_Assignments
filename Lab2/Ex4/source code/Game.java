@@ -1,22 +1,51 @@
 
 import java.io.*;
 
+
+
 //STUDENTS SHOULD ADD CLASS COMMENTS, METHOD COMMENTS, FIELD COMMENTS 
 
+
+/**
+ * The Class Game.
+ */
 public class Game implements Constants {
 
+
+	/** The board. */
 	private Board theBoard;
+	
+
+	/** The ref. */
 	private Referee theRef;
 
+
+	/**
+	 * Instantiates a new game.
+	 */
 	public Game() {
 		theBoard = new Board();
 	}
 
+
+	/**
+	 * Appoint referee.
+	 *
+	 * @param r the r
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public void appointReferee(Referee r) throws IOException {
 		theRef = r;
 		theRef.runTheGame();
 	}
 
+
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public static void main(String[] args) throws IOException {
 		Referee theRef;
 		Player xPlayer, oPlayer;
