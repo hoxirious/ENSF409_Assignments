@@ -41,10 +41,6 @@ public class Order {
 		}
 	}
 
-	public void contactSupplier(Order order) {
-
-	}
-
 	@Override
 	public String toString() {
 		String st = "\n";

@@ -150,7 +150,7 @@ public class Inventory {
 	 * @param theItem  the the item
 	 * @param itemLeft the item left
 	 */
-	public void orderAction(Item theItem, int itemLeft) {
+	private void orderAction(Item theItem, int itemLeft) {
 		// TODO: trigger the order action
 		if (itemLeft <= 40) {
 			try {
