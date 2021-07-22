@@ -4,11 +4,21 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * The Class FileManager.
+ */
 public class FileManager {
 	
+	/** The suppliers. */
 	private ArrayList<Supplier> suppliers;
 
     
+	/**
+	 * Read storage.
+	 *
+	 * @return the array list
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public ArrayList<Item> readStorage() throws IOException {
 	 ArrayList<Item> itemList = new ArrayList<Item>();
 	 String filename = "E:\\FormCanada\\UOC\\S2021\\ENSF409\\ENSF409_Assignments\\Lab3\\ex1\\items.txt";
@@ -50,6 +60,11 @@ public class FileManager {
 	return itemList;
 }
 
+    /**
+     * Read supplier.
+     *
+     * @return the array list
+     */
     public ArrayList<Supplier> readSupplier() {
         suppliers = new ArrayList<Supplier>();
 
