@@ -1,4 +1,4 @@
-package Lab4;
+package Exercise_1;
 
 public class Text {
     private String text;

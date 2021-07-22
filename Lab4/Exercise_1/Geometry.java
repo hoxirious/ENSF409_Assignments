@@ -1,4 +1,4 @@
-package Lab4;
+package Exercise_1;
 
 import java.util.Iterator;
 import java.util.TreeSet;

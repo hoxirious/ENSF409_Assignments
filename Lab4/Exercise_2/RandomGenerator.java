@@ -1,4 +1,4 @@
-package Lab4;
+package Exercise_2;
 
 //  RandomGenerator.java
 

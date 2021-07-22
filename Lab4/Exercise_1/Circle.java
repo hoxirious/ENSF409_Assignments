@@ -1,4 +1,4 @@
-package Lab4;
+package Exercise_1;
 
 class Circle extends Shape{
 	private Double radius;

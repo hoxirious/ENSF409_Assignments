@@ -1,30 +1,31 @@
-package Lab4;
+package Exercise_2;
+
 import java.util.Scanner;
 
 /**
  * The Class Player.
  */
-public class Player implements Constants {
-	
+public abstract class Player implements Constants {
+
 	/** The name. */
-	private String name;
-	
+	protected String name;
+
 	/** The board. */
-	private Board board;
-	
+	protected Board board;
+
 	/** The opponent. */
-	private Player opponent;
-	
+	protected Player opponent;
+
 	/** The mark. */
-	private char mark;
+	protected char mark;
 
 	/**
 	 * Instantiates a new player.
 	 *
-	 * @param name the name
+	 * @param name            the name
 	 * @param playerCharacter the player character
 	 */
-	public Player(String name, char playerCharacter) {
+	protected Player(String name, char playerCharacter) {
 		setName(name);
 		setMark(playerCharacter);
 	}
@@ -34,7 +35,7 @@ public class Player implements Constants {
 	 *
 	 * @param name the new name
 	 */
-	public void setName(String name) {
+	protected void setName(String name) {
 		this.name = name;
 	}
 
@@ -43,7 +44,7 @@ public class Player implements Constants {
 	 *
 	 * @return the name
 	 */
-	public String getName() {
+	protected String getName() {
 		return this.name;
 	}
 
@@ -52,7 +53,7 @@ public class Player implements Constants {
 	 *
 	 * @param mark the new mark
 	 */
-	public void setMark(char mark) {
+	protected void setMark(char mark) {
 		this.mark = mark;
 	}
 
@@ -61,14 +62,14 @@ public class Player implements Constants {
 	 *
 	 * @return the mark
 	 */
-	public char getMark() {
+	protected char getMark() {
 		return mark;
 	}
 
 	/**
 	 * Play.
 	 */
-	public void play() {
+	protected void play() {
 		if (board.checkWinner(mark) == 0) {
 			makeMove();
 			board.display();
@@ -86,7 +87,7 @@ public class Player implements Constants {
 	/**
 	 * Game over.
 	 */
-	public void gameOver() {
+	protected void gameOver() {
 		if (board.isFull()) {
 			System.out.println("It's a tie!");
 		} else if (board.xWins()) {
@@ -96,14 +97,14 @@ public class Player implements Constants {
 		}
 	}
 
-/**
- * Make move.
- */
+	/**
+	 * Make move.
+	 */
 //javac Game.java Constants.java Player.java Referee.java Board.java
-	public void makeMove() {
+	protected void makeMove() {
 		Scanner scan = new Scanner(System.in);
 		int row, col;
-		System.out.println(getMark()+ "'s turn");
+		System.out.println(getMark() + "'s turn");
 		System.out.println("Enter row");
 		row = scan.nextInt();
 		System.out.println("Enter column");
@@ -116,7 +117,7 @@ public class Player implements Constants {
 	 *
 	 * @param otherPlayer the new opponent
 	 */
-	public void setOpponent(Player otherPlayer) {
+	protected void setOpponent(Player otherPlayer) {
 		this.opponent = otherPlayer;
 	}
 
@@ -125,7 +126,7 @@ public class Player implements Constants {
 	 *
 	 * @param theBoard the new board
 	 */
-	public void setBoard(Board theBoard) {
+	protected void setBoard(Board theBoard) {
 		board = theBoard;
 	}
 }
