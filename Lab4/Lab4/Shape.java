@@ -1,3 +1,4 @@
+package Lab4;
 
 abstract class Shape {
 	protected Point origin;

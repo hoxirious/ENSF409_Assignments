@@ -1,4 +1,4 @@
-
+package Lab4;
 
 public class Rectangle extends Shape {
 	protected Double width, length;

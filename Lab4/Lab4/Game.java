@@ -1,6 +1,11 @@
+package Lab4;
 
 //Game.java
 import java.io.*;
+
+import Board;
+import Constants;
+import Referee;
 
 public class Game implements Constants {
 

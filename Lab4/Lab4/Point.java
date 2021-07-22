@@ -1,3 +1,4 @@
+package Lab4;
 
 class Point{
 	private Colour colour;

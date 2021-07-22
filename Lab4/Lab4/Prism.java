@@ -1,4 +1,4 @@
-
+package Lab4;
 
 class Prism extends Rectangle {
 	private Double height;

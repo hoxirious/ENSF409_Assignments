@@ -1,3 +1,4 @@
+package Lab4;
 
 public class Text {
     private String text;

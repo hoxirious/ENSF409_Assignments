@@ -1,3 +1,4 @@
+package Lab4;
 
 class Colour
 {
