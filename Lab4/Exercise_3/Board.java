@@ -1,4 +1,4 @@
-package Exercise_2;
+package Exercise_3;
 
 //STUDENTS SHOULD ADD CLASS COMMENTS, METHOD COMMENTS, FIELD COMMENTS 
 

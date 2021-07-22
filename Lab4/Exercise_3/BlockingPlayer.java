@@ -1,4 +1,4 @@
-package Exercise_2;
+package Exercise_3;
 
 public class BlockingPlayer extends Player{
 

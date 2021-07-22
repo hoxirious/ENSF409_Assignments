@@ -1,17 +1,16 @@
-package Exercise_2;
+package Exercise_3;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class Referee.
  */
 public class Referee {
-	
+
 	/** The o player. */
 	private Player xPlayer, oPlayer;
-	
+
 	/** The board. */
 	private Board board;
-
 
 	/**
 	 * Run the game.
