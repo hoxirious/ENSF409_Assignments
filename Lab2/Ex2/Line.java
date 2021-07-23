@@ -1,3 +1,4 @@
+import Exercise_1.Point;
 
 class Line {
 	Point start, end;

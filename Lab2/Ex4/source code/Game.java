@@ -1,6 +1,8 @@
 
 import java.io.*;
 
+import Exercise_2.Game;
+
 
 
 //STUDENTS SHOULD ADD CLASS COMMENTS, METHOD COMMENTS, FIELD COMMENTS 

@@ -2,6 +2,8 @@
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 
+import Exercise_1.Point;
+
 public class Drawing {
 	LinkedHashSet<Line> lines;
 	

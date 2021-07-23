@@ -1,3 +1,4 @@
+import Exercise_1.Colour;
 
 class Text
 {

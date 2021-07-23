@@ -1,4 +1,4 @@
-
+import Exercise_1.Point;
 
 class Point {
 	private int x, y;
