@@ -20,4 +20,9 @@ public class Text {
 	public String toString(){
 		return (text);
 	}
+
+	
+	public int compareTo(String name) {
+		return this.text.compareTo(name);
+	}
 }

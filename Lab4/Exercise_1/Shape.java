@@ -1,6 +1,6 @@
 package Exercise_1;
 
-abstract class Shape {
+abstract class Shape implements Comparable<Shape>{
 	protected Point origin;
 	protected Text name;
 
@@ -42,5 +42,9 @@ abstract class Shape {
 		String s = "\nShape name: " + name + "\nOrigin: " + origin;
 		return s;
 	}
+	
+	public int compareTo(Shape other) {
+        return this.name.compareTo(other.getName()); 
+    }
 
 }
