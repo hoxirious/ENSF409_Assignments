@@ -101,8 +101,7 @@ public abstract class Player implements Constants {
 	/**
 	 * Make move.
 	 */
-	protected void makeMove() {
-	}
+	abstract protected void makeMove();
 
 	/**
 	 * Sets the opponent.
