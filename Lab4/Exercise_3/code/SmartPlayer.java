@@ -41,7 +41,7 @@ public class SmartPlayer extends BlockingPlayer {
 	 *
 	 * @param row the row
 	 * @param col the col
-	 * @return true, if the given move makes the opponent win 
+	 * @return true, if the given move makes the player win 
 	 */
 	protected boolean testForWinning(int row, int col) {
 	
