@@ -1,10 +1,12 @@
-package Exercise_1;
-
 import java.util.Iterator;
 import java.util.TreeSet;
 
 public class Geometry{
 	private TreeSet <Shape> shapes;
+	
+	public Geometry() {
+		shapes = new TreeSet<Shape>();
+	}
 	
 	
 	public static void main(String[] args) {
@@ -26,7 +28,7 @@ public class Geometry{
         
         //      SECTION 2: THE FOLLOWING CODE SEGMENT MUST BE UNCOMMENTED ONLY
         //      FOR EXERCISE 2
-        /*
+        
          Geometry demo = new Geometry();
          System.out.println("\nAdding Rectangle, Circle, and Prism objects to the list... ");
          demo.add(r1);
@@ -36,17 +38,32 @@ public class Geometry{
          demo.add(p1);
          demo.add(p2);
          
+ 		 
+         
          System.out.println("\nShowing information about objects added to the list:");
          demo.showAll();
          
          System.out.println("\nShowing area, perimeter, and volume of objects in the list:");
          
-         Iterator <Shape> it = demo.shapes.iterator();
-         while(it.hasNext()){
-        	demo.calculator(it.next());
-         }
+//         Iterator <Shape> it = demo.shapes.iterator();
+//         while(it.hasNext()){
+//         demo.calculator(it.next());
+//         }
          
-         */
+         
 
 	}
+	
+	public void add(Shape s) {
+		shapes.add(s);
+	}
+	
+	public void showAll() {
+		Iterator <Shape> temp = this.shapes.iterator();
+		while(temp.hasNext()) {
+			System.out.println(temp.next());
+		}
+	}
+	
+	
 }
