@@ -101,9 +101,9 @@ public class Game implements Constants {
 		case 3:
 			result = new BlockingPlayer(name, mark);
 			break;
-//			case 4:
-//				result = new SmartPlayer(name, mark);
-//				break;
+		case 4:
+			result = new SmartPlayer(name, mark);
+			break;
 		default:
 			System.out.print("\nDefault case in switch should not be reached.\n" + "  Program terminated.\n");
 			System.exit(0);

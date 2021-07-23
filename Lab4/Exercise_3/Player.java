@@ -1,7 +1,5 @@
 package Exercise_3;
 
-import java.util.Scanner;
-
 /**
  * The Class Player.
  */
@@ -22,8 +20,8 @@ public abstract class Player implements Constants {
 	/**
 	 * Instantiates a new player.
 	 *
-	 * @param name            the name
-	 * @param playerCharacter the player character
+	 * @param name            player's name
+	 * @param playerCharacter the player's mark
 	 */
 	protected Player(String name, char playerCharacter) {
 		setName(name);
@@ -57,6 +55,10 @@ public abstract class Player implements Constants {
 		this.mark = mark;
 	}
 
+	protected boolean checkEmpty(int row, int col) {
+		return board.getMark(row, col) == SPACE_CHAR;
+	}
+
 	/**
 	 * Gets the mark.
 	 *
@@ -70,10 +72,10 @@ public abstract class Player implements Constants {
 	 * Play.
 	 */
 	protected void play() {
-		if (board.checkWinner(mark) == 0) {
+		if (board.checkWinner(mark) == 0 && board.checkWinner(opponent.getMark()) == 0 && !board.isFull()) {
 			makeMove();
 			board.display();
-			if (board.checkWinner(mark) == 0) {
+			if (board.checkWinner(mark) == 0 && board.checkWinner(opponent.getMark()) == 0 && !board.isFull()) {
 				opponent.play();
 			} else {
 				gameOver();
@@ -81,35 +83,25 @@ public abstract class Player implements Constants {
 		} else {
 			gameOver();
 		}
-
 	}
 
 	/**
 	 * Game over.
 	 */
 	protected void gameOver() {
-		if (board.isFull()) {
-			System.out.println("It's a tie!");
-		} else if (board.xWins()) {
+		if (board.xWins()) {
 			System.out.println("Player X aka " + getName() + " wins!");
-		} else {
+		} else if (board.oWins()) {
 			System.out.println("Player O aka " + getName() + " wins!");
+		} else if (board.isFull()) {
+			System.out.println("It's a tie!");
 		}
 	}
 
 	/**
 	 * Make move.
 	 */
-//javac Game.java Constants.java Player.java Referee.java Board.java
 	protected void makeMove() {
-		Scanner scan = new Scanner(System.in);
-		int row, col;
-		System.out.println(getMark() + "'s turn");
-		System.out.println("Enter row");
-		row = scan.nextInt();
-		System.out.println("Enter column");
-		col = scan.nextInt();
-		board.addMark(row, col, mark);
 	}
 
 	/**

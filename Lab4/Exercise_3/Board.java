@@ -37,6 +37,11 @@ public class Board implements Constants {
 	public char getMark(int row, int col) {
 		return theBoard[row][col];
 	}
+	
+	public void setBlank(int row, int col) {
+		theBoard[row][col] = SPACE_CHAR;
+		markCount--;
+	}
 
 	/**
 	 * Checks if is full.
@@ -44,6 +49,7 @@ public class Board implements Constants {
 	 * @return true, if is full
 	 */
 	public boolean isFull() {
+		
 		return markCount == 9;
 	}
 
@@ -120,7 +126,7 @@ public class Board implements Constants {
 	int checkWinner(char mark) {
 		int row, col;
 		int result = 0;
-
+		
 		for (row = 0; result == 0 && row < 3; row++) {
 			int row_result = 1;
 			for (col = 0; row_result == 1 && col < 3; col++)
@@ -130,7 +136,6 @@ public class Board implements Constants {
 				result = 1;
 		}
 
-		
 		for (col = 0; result == 0 && col < 3; col++) {
 			int col_result = 1;
 			for (row = 0; col_result != 0 && row < 3; row++)

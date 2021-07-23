@@ -2,20 +2,20 @@ package Exercise_3;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class BlockingPlayer.
+ * The Class SmartPlayer.
  */
-public class BlockingPlayer extends RandomPlayer {
+public class SmartPlayer extends BlockingPlayer {
 
 	/**
-	 * Instantiates a new blocking player.
+	 * Instantiates a new smart player.
 	 *
 	 * @param name the name
 	 * @param playerCharacter the player character
 	 */
-	public BlockingPlayer(String name, char playerCharacter) {
+	public SmartPlayer(String name, char playerCharacter) {
 		super(name, playerCharacter);
 	}
-
+	
 	/**
 	 * Make move.
 	 */
@@ -25,38 +25,43 @@ public class BlockingPlayer extends RandomPlayer {
 			for (int j = 0; j < 3; j++) {
 				if (checkEmpty(i, j)) {
 					// test if this cell needed to be blocked
-					if (testForBlocking(i, j)) {
+					if (testForWinning(i, j)) {
 						board.addMark(i, j, mark);
 						return; 
 					}
 				}
 			}
-		}
+		}		
 		super.makeMove();
 		return;
 	}
-
+	
 	/**
-	 * Test for blocking.
+	 * Test for winning.
 	 *
 	 * @param row the row
 	 * @param col the col
-	 * @return true, if the given move makes the opponent win
+	 * @return true, if the given move makes the opponent win 
 	 */
-	protected boolean testForBlocking(int row, int col) {
-
-		// suppose opponent make this move
-		char opponentMark = opponent.getMark();
-		board.addMark(row, col, opponentMark);
-		if (board.checkWinner(opponentMark) == 1) {
+	protected boolean testForWinning(int row, int col) {
+	
+		// suppose you make this move
+		board.addMark(row, col, mark);
+		//if that makes you win
+		if (board.checkWinner(mark) == 1) {
 			// remove the suppose move
 			board.setBlank(row, col);
 			return true;
-		} else {
+		}
+		
+		else {
 			// remove the suppose move
 			board.setBlank(row, col);
 			return false;
 		}
+		
+		
 	}
-
+	
+	
 }

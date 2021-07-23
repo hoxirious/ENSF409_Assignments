@@ -10,7 +10,7 @@ class RandomGenerator {
  * creates a random number ranging between lo and hi,  
  * @param lo
  * @param hi
- * @return
+ * @return random number
  */
 	int discrete(int lo, int hi)
 	{
@@ -23,5 +23,4 @@ class RandomGenerator {
 		int d = r.nextInt(hi - lo + 1) + lo;
 		return d;
 	}
-	
 }
