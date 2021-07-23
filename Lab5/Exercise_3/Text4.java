@@ -1,4 +1,4 @@
-import Exercise_1.Colour;
+package Exercise_3;
 
 class Text
 {

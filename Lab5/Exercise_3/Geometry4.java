@@ -1,5 +1,6 @@
+package Exercise_3;
 
-public class Geometry{
+public class Geometry4{
 	
 	public static void main(String[] args) {
 		Rectangle r1 = new Rectangle(3.0, 4.0, 5.0, 6.0, "R1", new Colour("Black"));

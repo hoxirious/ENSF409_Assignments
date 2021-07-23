@@ -1,3 +1,4 @@
+package Exercise_3;
 
 
 class Rectangle extends Shape
