@@ -21,7 +21,7 @@ public class Sums {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				nextInt = 0; 
-				System.out.println("Invalid number. Please re-enter: ");
+				System.out.println("Something wrong with your code. Please re-enter: ");
 			}
 		// Read next datum in input. An integer is expected
 			while (nextInt != 0) {
@@ -30,11 +30,11 @@ public class Sums {
 						nextInt = Integer.parseInt(in.readLine());
 					} catch (NumberFormatException e) {
 						s -= nextInt;
-						System.out.println("Invalid number. Please reenter: ");
+						System.out.println("Invalid number. Please re-enter: ");
 						continue;
 					} catch (IOException e) {
 						s -= nextInt;
-						System.out.println("Invalid number. Please reenter: ");
+						System.out.println("Something wrong with your code. Please re-enter: ");
 						continue;
 					}
 			}
