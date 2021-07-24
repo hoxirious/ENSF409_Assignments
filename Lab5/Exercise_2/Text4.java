@@ -1,5 +1,5 @@
 
-class Text
+class Text implements Resizable
 {
 	
 	private final Double DEFAULT_SIZE = 10.0;
@@ -34,6 +34,24 @@ class Text
 	@Override
 	public String toString(){
 		return (text);
+	}
+
+	@Override
+	public void shrink(Double divisor) throws SizeFactorException {
+		// TODO Auto-generated method stub
+		if (divisor < LIMIT) {
+			throw new SizeFactorException();
+		}
+		fontSize = fontSize/divisor;
+	}
+
+	@Override
+	public void enlarge(Double multiplier) throws SizeFactorException {
+		// TODO Auto-generated method stub
+		if (multiplier < LIMIT) {
+			throw new SizeFactorException();
+		}
+		fontSize = fontSize*multiplier;
 	}
 
        

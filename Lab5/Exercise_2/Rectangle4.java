@@ -1,7 +1,6 @@
-package Exercise_3;
 
 
-class Rectangle extends Shape
+class Rectangle extends Shape implements Resizable
 {
 	protected Double width, length;
 	
@@ -35,6 +34,26 @@ class Rectangle extends Shape
 	public String toString(){
 		String s = super.toString()+ "\nWidth: " + width + "\nLength: " + length;
 		return s;
+	}
+
+	@Override
+	public void shrink(Double divisor) throws SizeFactorException {
+		// TODO Auto-generated method stub
+		if (divisor < LIMIT) {
+			throw new SizeFactorException();
+		}
+		this.length = this.length / divisor;
+		this.width = this.width / divisor;
+	}
+
+	@Override
+	public void enlarge(Double multiplier) throws SizeFactorException{
+		// TODO Auto-generated method stub
+		if (multiplier < LIMIT) {
+			throw new SizeFactorException();
+		}
+		this.length = this.length * multiplier;
+		this.width = this.width * multiplier;
 	}
         	
 }

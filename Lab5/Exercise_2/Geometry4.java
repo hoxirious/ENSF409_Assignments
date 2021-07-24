@@ -1,4 +1,4 @@
-package Exercise_3;
+
 
 public class Geometry4{
 	
@@ -57,13 +57,13 @@ public class Geometry4{
         
 // THE FOLLOWING CODE SEGMENT MUST BE UNCOMMENTED ONLY FOR EXERCISE 2 in Lab 6
 // EXERCISE_2_BEGINS
-/*
+
         try{
 
         	  r1.enlarge(2.0);
         	  r1.name.enlarge(3.0);
         	  c1.shrink(2.0);
-        	  p1.enlarge(0.5);
+        	  p1.shrink(0.5);
         } catch(SizeFactorException e){
         	System.out.println(e.getMessage());
         	
@@ -75,7 +75,7 @@ public class Geometry4{
         System.out.println(r1.name.getFontSize());
         System.out.println("\nHere are values for c1 after calling shrink (2.0):");
         System.out.println(c1);
-        System.out.println("\nHere are values for p1 after calling shrink (0.5):");
+        System.out.println("\nHere are values for p1 after calling shrink (0.5) -- UNCHANGED:");
         System.out.println(p1);
  
         try{
@@ -85,9 +85,9 @@ public class Geometry4{
         	
         }
       
-        System.out.println("\nHere are values for p1 after calling shrink (0.5) -- UNCHANGED:");
+        System.out.println("\nHere are values for p1 after calling enlarge (0.5) -- UNCHANGED:");
         System.out.println(p1); 
- */
+ 
 // EXERCISE_2_ENDS
                
 	}

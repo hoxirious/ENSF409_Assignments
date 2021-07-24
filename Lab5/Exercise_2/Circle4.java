@@ -1,7 +1,7 @@
-package Exercise_3;
 
 
-class Circle extends Shape
+
+class Circle extends Shape implements Resizable
 {
 	private Double radius;
 
@@ -35,6 +35,26 @@ class Circle extends Shape
 	public String toString(){
 		String s = super.toString()+ "\nRadius: " + radius;
 		return s;
+	}
+
+
+	@Override
+	public void shrink(Double divisor) throws SizeFactorException {
+		// TODO Auto-generated method stub
+		if (divisor < LIMIT) {
+			throw new SizeFactorException();
+		}
+		radius = radius/divisor;
+	}
+
+
+	@Override
+	public void enlarge(Double multiplier) throws SizeFactorException {
+		// TODO Auto-generated method stub
+		if (multiplier < LIMIT) {
+			throw new SizeFactorException();
+		}
+		radius = radius*multiplier;
 	}
          
 }

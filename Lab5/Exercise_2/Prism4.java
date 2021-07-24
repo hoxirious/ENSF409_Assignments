@@ -1,7 +1,7 @@
-package Exercise_3;
 
 
-class Prism extends Rectangle {
+
+class Prism extends Rectangle implements Resizable {
 	private Double height;
 	
 	public Prism(Double x, Double y, Double l, Double w, Double h, String  name, Colour colour)
@@ -40,5 +40,21 @@ class Prism extends Rectangle {
 	{
 		String s = super.toString()+ "\nHeight: " + height;
 		return s;
+	}
+	
+	public void shrink(Double divisor) throws SizeFactorException {
+		super.shrink(divisor);
+		if (divisor < LIMIT) {
+			throw new SizeFactorException();
+		}
+		height = height / divisor;
+	}
+	
+	public void enlarge(Double multiplier) throws SizeFactorException {
+		super.enlarge(multiplier);
+		if (multiplier < LIMIT) {
+			throw new SizeFactorException();
+		}
+		height = height * multiplier;
 	}
 }

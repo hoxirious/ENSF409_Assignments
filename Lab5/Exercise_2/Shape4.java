@@ -1,4 +1,4 @@
-package Exercise_3;
+
 
 abstract class Shape
 {
