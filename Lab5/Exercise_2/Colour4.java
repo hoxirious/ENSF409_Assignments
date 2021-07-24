@@ -1,10 +1,9 @@
-package Exercise_1;
+package Exercise_3;
 
 
-class Colour implements Cloneable
+class Colour
 {
     private String colour;
-    
     
 	public Colour(String s) {
 		colour = new String(s);
@@ -17,11 +16,6 @@ class Colour implements Cloneable
 	@Override
 	public String toString(){
 		return colour;
-	}
-	
-	@Override
-	public Object clone() throws CloneNotSupportedException {
-		return (Colour)super.clone();
 	}
 
 }

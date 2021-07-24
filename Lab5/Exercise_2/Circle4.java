@@ -1,8 +1,7 @@
-package Exercise_1;
+package Exercise_3;
 
 
-
-class Circle extends Shape implements Cloneable
+class Circle extends Shape
 {
 	private Double radius;
 
@@ -36,12 +35,6 @@ class Circle extends Shape implements Cloneable
 	public String toString(){
 		String s = super.toString()+ "\nRadius: " + radius;
 		return s;
-	}
-	@Override
-	public Object clone() throws CloneNotSupportedException {
-		Circle obj = (Circle)super.clone();
-		obj.radius = radius;
-		return obj;
 	}
          
 }

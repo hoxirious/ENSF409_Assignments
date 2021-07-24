@@ -1,6 +1,6 @@
-package Exercise_1;
+package Exercise_3;
 
-abstract class Shape implements Cloneable
+abstract class Shape
 {
 	protected Point origin;
 	protected Text name;
@@ -41,16 +41,6 @@ abstract class Shape implements Cloneable
 	public String toString(){
 		String s = "\nShape name: " + name + "\nOrigin: " + origin;
 		return s;
-	}
-	
-	@Override
-	public Object clone() throws CloneNotSupportedException {
-		Shape obj = (Shape)super.clone();
-		if (origin != null)
-		   obj.origin = (Point)origin.clone();
-		if (name != null)
-		   obj.name = (Text)name.clone();
-		return obj;
 	}
 
 }

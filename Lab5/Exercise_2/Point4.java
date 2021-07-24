@@ -1,6 +1,7 @@
-package Exercise_1;
+package Exercise_3;
 
-class Point implements Cloneable
+
+class Point 
 {
 	private Colour colour;
 	private Double xCoordinate, yCoordinate;
@@ -48,12 +49,5 @@ class Point implements Cloneable
 		Double dist_y = other.yCoordinate - that.yCoordinate;
 		
 		return (Math.sqrt(Math.pow(dist_x, 2) + Math.pow(dist_y, 2)));
-	}
-	
-	@Override
-	public Object clone() throws CloneNotSupportedException {
-		Point obj = (Point)super.clone();
-		obj.colour = (Colour)colour.clone();
-		return obj;
 	}
 }
