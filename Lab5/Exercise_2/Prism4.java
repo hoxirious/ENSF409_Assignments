@@ -1,7 +1,7 @@
 
 
 
-class Prism extends Rectangle implements Resizable {
+class Prism extends Rectangle  {
 	private Double height;
 	
 	public Prism(Double x, Double y, Double l, Double w, Double h, String  name, Colour colour)

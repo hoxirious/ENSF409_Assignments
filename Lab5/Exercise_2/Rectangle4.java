@@ -1,6 +1,6 @@
 
 
-class Rectangle extends Shape implements Resizable
+class Rectangle extends Shape 
 {
 	protected Double width, length;
 	

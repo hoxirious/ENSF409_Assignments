@@ -1,7 +1,7 @@
 
 
 
-class Circle extends Shape implements Resizable
+class Circle extends Shape 
 {
 	private Double radius;
 

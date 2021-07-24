@@ -1,6 +1,6 @@
 
 
-abstract class Shape
+abstract class Shape implements Resizable, Accessible
 {
 	protected Point origin;
 	protected Text name;
@@ -41,6 +41,14 @@ abstract class Shape
 	public String toString(){
 		String s = "\nShape name: " + name + "\nOrigin: " + origin;
 		return s;
+	}
+	
+	public String getName() {
+		return name.getText();
+	}
+	
+	public void setName(String newName) {
+		name.setText(newName);
 	}
 
 }

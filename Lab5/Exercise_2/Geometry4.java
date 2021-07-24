@@ -60,33 +60,33 @@ public class Geometry4{
 
         try{
 
-        	  r1.enlarge(2.0);
-        	  r1.name.enlarge(3.0);
-        	  c1.shrink(2.0);
-        	  p1.shrink(0.5);
-        } catch(SizeFactorException e){
-        	System.out.println(e.getMessage());
-        	
-        }
-      
-        System.out.println("\nHere are values for r1 after calling enlarge(2.0):");
-        System.out.println(r1);
-        System.out.println("\nHere is the font size for r1.name after calling enlarge(3.0):");
-        System.out.println(r1.name.getFontSize());
-        System.out.println("\nHere are values for c1 after calling shrink (2.0):");
-        System.out.println(c1);
-        System.out.println("\nHere are values for p1 after calling shrink (0.5) -- UNCHANGED:");
-        System.out.println(p1);
- 
-        try{
-        	  p1.enlarge(0.5);
-        } catch(SizeFactorException e){
-        	System.out.println(e.getMessage());
-        	
-        }
-      
-        System.out.println("\nHere are values for p1 after calling enlarge (0.5) -- UNCHANGED:");
-        System.out.println(p1); 
+      	  r1.enlarge(2.0);
+      	  r1.name.enlarge(3.0);
+      	  c1.shrink(2.0);
+      	  p1.enlarge(0.5);
+      } catch(SizeFactorException e){
+      	System.out.println(e.getMessage());
+      	
+      }
+    
+      System.out.println("\nHere are values for r1 after calling enlarge(2.0):");
+      System.out.println(r1);
+      System.out.println("\nHere is the font size for r1.name after calling enlarge(3.0):");
+      System.out.println(r1.name.getFontSize());
+      System.out.println("\nHere are values for c1 after calling shrink (2.0):");
+      System.out.println(c1);
+      System.out.println("\nHere are values for p1 after calling shrink (0.5):");
+      System.out.println(p1);
+
+      try{
+      	  p1.enlarge(0.5);
+      } catch(SizeFactorException e){
+      	System.out.println(e.getMessage());
+      	
+      }
+    
+      System.out.println("\nHere are values for p1 after calling shrink (0.5) -- UNCHANGED:");
+      System.out.println(p1); 
  
 // EXERCISE_2_ENDS
                
