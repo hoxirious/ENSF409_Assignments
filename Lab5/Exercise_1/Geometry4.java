@@ -1,5 +1,4 @@
-package Exercise_3;
-
+package Exercise_1;
 public class Geometry4{
 	
 	public static void main(String[] args) {
@@ -27,30 +26,30 @@ public class Geometry4{
 // THE FOLLOWING CODE SEGMENT MUST BE UNCOMMENTED ONLY FOR EXERCISE 1 in Lab 6
 // EXERCISE_1_BEGINS
 
-//        System.out.println("\n\nMaking r1 copy of r2, c1 copy of c2, p1 copy of p2:");
-//        r1 = r2;
-//        c1 = c2;
-//        p1 = p2;
-//        
-//        r2.set_length(1000.0);
-//        r2.getOrigin().setx(88.0);
-//        r2.getOrigin().sety(99.0);
-//        r2.name.setText("");
-//        c2.set_radius(2000.00);
-//        c2.getOrigin().setx(188.0);
-//        c2.getOrigin().sety(199.0);
-//        c2.name.setText("");
-//        p2.set_height(3000.0);
-//        p2.getOrigin().setx(88.0);
-//        p2.getOrigin().sety(99.0);
-//        p2.name.setText("");
-//        
-//        System.out.println("\nHere are values for r1 after trying to make it a copy of r2:");
-//        System.out.println(r1);
-//        System.out.println("\nHere are values for c1 after trying to make it a copy of c2:");
-//        System.out.println(c1);  
-//        System.out.println("\nHere are values for p1 after trying to make it a copy of p2:");
-//        System.out.println(p1); 
+        System.out.println("\n\nMaking r1 copy of r2, c1 copy of c2, p1 copy of p2:");
+        r1 = r2;
+        c1 = c2;
+        p1 = p2;
+        
+        r2.set_length(1000.0);
+        r2.getOrigin().setx(88.0);
+        r2.getOrigin().sety(99.0);
+        r2.name.setText("");
+        c2.set_radius(2000.00);
+        c2.getOrigin().setx(188.0);
+        c2.getOrigin().sety(199.0);
+        c2.name.setText("");
+        p2.set_height(3000.0);
+        p2.getOrigin().setx(88.0);
+        p2.getOrigin().sety(99.0);
+        p2.name.setText("");
+        
+        System.out.println("\nHere are values for r1 after trying to make it a copy of r2:");
+        System.out.println(r1);
+        System.out.println("\nHere are values for c1 after trying to make it a copy of c2:");
+        System.out.println(c1);  
+        System.out.println("\nHere are values for p1 after trying to make it a copy of p2:");
+        System.out.println(p1); 
 
 // EXERCISE_1_ENDS
 
