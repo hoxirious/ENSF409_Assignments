@@ -1,6 +1,6 @@
-package Exercise_1;
 
-class Rectangle extends Shape implements Cloneable
+
+class Rectangle extends Shape 
 {
 	protected Double width, length;
 	
