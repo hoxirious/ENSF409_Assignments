@@ -39,8 +39,6 @@ class Text implements Cloneable
 	@Override
     public Object clone() throws CloneNotSupportedException {
     	Text obj = (Text)super.clone();
-    	if (colour != null)
-    	   obj.colour = (Colour)colour.clone();
     	return obj;
     }   
 }

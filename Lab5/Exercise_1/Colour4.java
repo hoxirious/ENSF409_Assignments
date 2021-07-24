@@ -21,7 +21,7 @@ class Colour implements Cloneable
 	
 	@Override
 	public Object clone() throws CloneNotSupportedException {
-		return (Colour)super.clone();
+		return super.clone();
 	}
 
 }
