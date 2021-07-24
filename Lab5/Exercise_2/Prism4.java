@@ -1,6 +1,7 @@
+package Exercise_3;
 
 
-class Prism extends Rectangle implements Cloneable{
+class Prism extends Rectangle {
 	private Double height;
 	
 	public Prism(Double x, Double y, Double l, Double w, Double h, String  name, Colour colour)
@@ -39,12 +40,5 @@ class Prism extends Rectangle implements Cloneable{
 	{
 		String s = super.toString()+ "\nHeight: " + height;
 		return s;
-	}
-	
-	@Override
-	public Object clone() throws CloneNotSupportedException {
-		Prism obj = (Prism)super.clone();
-		obj.height = height;
-		return obj;
 	}
 }

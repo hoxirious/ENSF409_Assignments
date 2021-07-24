@@ -1,5 +1,5 @@
 
-class Text implements Cloneable
+class Text
 {
 	
 	private final Double DEFAULT_SIZE = 10.0;
@@ -36,12 +36,5 @@ class Text implements Cloneable
 		return (text);
 	}
 
-	@Override
-    public Object clone() throws CloneNotSupportedException {
-    	Text obj = (Text)super.clone();
-    	if (colour != null)
-    	   obj.colour = (Colour)colour.clone();
-    	return obj;
-    }   
+       
 }
-

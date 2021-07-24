@@ -1,6 +1,7 @@
+package Exercise_3;
 
 
-class Rectangle extends Shape implements Cloneable
+class Rectangle extends Shape
 {
 	protected Double width, length;
 	
@@ -34,14 +35,6 @@ class Rectangle extends Shape implements Cloneable
 	public String toString(){
 		String s = super.toString()+ "\nWidth: " + width + "\nLength: " + length;
 		return s;
-	}
-	
-	@Override
-	public Object clone() throws CloneNotSupportedException {
-		Rectangle obj = (Rectangle)super.clone();
-		obj.length = length;
-		obj.width = width;
-		return obj;
 	}
         	
 }
