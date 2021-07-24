@@ -1,4 +1,4 @@
-
+package Exercise_1;
 
 class Rectangle extends Shape implements Cloneable
 {

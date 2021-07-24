@@ -1,3 +1,4 @@
+package Exercise_1;
 
 
 class Colour implements Cloneable

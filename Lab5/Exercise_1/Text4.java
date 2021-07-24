@@ -1,4 +1,4 @@
-
+package Exercise_1;
 class Text implements Cloneable
 {
 	

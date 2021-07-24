@@ -1,4 +1,4 @@
-
+package Exercise_1;
 
 class Prism extends Rectangle implements Cloneable{
 	private Double height;
