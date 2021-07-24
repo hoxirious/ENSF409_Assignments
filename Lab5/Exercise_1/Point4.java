@@ -1,4 +1,4 @@
-package Exercise_1;
+
 
 class Point implements Cloneable
 {

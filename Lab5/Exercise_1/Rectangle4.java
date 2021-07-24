@@ -1,5 +1,3 @@
-package Exercise_1;
-
 class Rectangle extends Shape 
 {
 	protected Double width, length;

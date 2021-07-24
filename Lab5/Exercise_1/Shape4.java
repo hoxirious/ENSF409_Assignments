@@ -1,4 +1,3 @@
-package Exercise_1;
 
 abstract class Shape implements Cloneable {
 	protected Point origin;
@@ -44,6 +43,7 @@ abstract class Shape implements Cloneable {
 		Shape obj = (Shape) super.clone();
 		obj.origin = (Point) origin.clone();
 		obj.name = (Text) name.clone();
+
 		return obj;
 	}
 

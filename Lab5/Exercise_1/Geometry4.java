@@ -1,4 +1,5 @@
-package Exercise_1;
+
+
 public class Geometry4{
 	
 	public static void main(String[] args) throws CloneNotSupportedException {
@@ -27,7 +28,6 @@ public class Geometry4{
 // EXERCISE_1_BEGINS
 
         System.out.println("\n\nMaking r1 copy of r2, c1 copy of c2, p1 copy of p2:");
-
         try {
             r1 = (Rectangle)r2.clone();
         } 

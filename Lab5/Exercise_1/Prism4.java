@@ -1,6 +1,6 @@
-package Exercise_1;
 
-class Prism extends Rectangle {
+
+class Prism extends Rectangle{
 	private Double height;
 	
 	public Prism(Double x, Double y, Double l, Double w, Double h, String  name, Colour colour)
