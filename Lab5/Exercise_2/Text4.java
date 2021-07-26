@@ -10,6 +10,10 @@ class Text implements Resizable
     private String text;
 
 
+    public Text() {
+    	fontSize = DEFAULT_SIZE;
+    }
+    
 	public Text(String text) {
        this.text = text;
        fontSize = DEFAULT_SIZE;

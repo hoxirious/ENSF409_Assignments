@@ -11,7 +11,8 @@ abstract class Shape implements Resizable, Accessible
 	protected Shape(Double x_origin, Double y_origin, String name, Colour colour){
 		
 		origin = new Point(x_origin,y_origin, colour);
-		this.name = new Text(name);
+		this.name = new Text();
+		setName(name);
 	}
 	
 	protected Point  getOrigin()   
@@ -39,7 +40,7 @@ abstract class Shape implements Resizable, Accessible
 	
 	@Override
 	public String toString(){
-		String s = "\nShape name: " + name + "\nOrigin: " + origin;
+		String s = "\nShape name: " + getName() + "\nOrigin: " + origin;
 		return s;
 	}
 	
