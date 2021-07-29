@@ -3,7 +3,7 @@ public class Resource {
 
 	int counter;
 	
-	public int increment() {
+	synchronized public int increment() {
 		return counter++;
 	}
 	
