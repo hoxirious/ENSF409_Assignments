@@ -19,7 +19,7 @@ public class RandomT {
 	/**
 	 * Randomize.
 	 */
-	synchronized public void randomize() {
+	public void randomize() {
 		Random ran = new Random();
 		int range = 100 - 1 + 1;
 		setNum(ran.nextInt(range) + 1);
