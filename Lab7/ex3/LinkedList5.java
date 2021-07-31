@@ -1,9 +1,9 @@
 
-class LinkedList  {
+class LinkedList <T>  {
 	
 	private int sizeM;
-    private Node headM;
-    private Node cursorM;
+    private Node<T> headM;
+    private Node<T> cursorM;
 			
     
     public LinkedList()
@@ -29,19 +29,19 @@ class LinkedList  {
 	  return cursorM.keyM;
 	}
 
-	public Double cursor()   
+	public T cursor()   
 	{
 	  assert(cursor_ok());
 	  return cursorM.itemM; 
 	}
 
-    public void push_back(Integer keyA, Double itemA){
-	  Node new_node = new Node (itemA, keyA, null );
+    public void push_back(Integer keyA, T itemA){
+	  Node <T> new_node = new Node<T> (itemA, keyA, null );
 	  if(headM == null)
 		  headM = new_node;
 	  else {
 	      cursorM = headM.nextM;
-	      Node p = headM;
+	      Node<T> p = headM;
 	      while (cursorM != null){
 		    cursorM = cursorM.nextM;
 		    p = p.nextM;
@@ -52,11 +52,11 @@ class LinkedList  {
      }
     
     
-	public void insert (Integer keyA,Double datumA)
+	public void insert (Integer keyA, T datumA)
 	{
 	  if (headM == null || keyA.compareTo(headM.keyM) < 0) 
 	  {
-		Node new_node = new Node (datumA,keyA, null);
+		Node<T> new_node = new Node<T> (datumA,keyA, null);
 	    headM = new_node;
 	    sizeM++;
 	  }
@@ -66,8 +66,8 @@ class LinkedList  {
 		
 		
 	  else {
-	    Node before= headM;
-	    Node after=headM.nextM;
+	    Node <T> before= headM;
+	    Node <T> after=headM.nextM;
 			
 	    while(after!= null && (keyA.compareTo(after.keyM)) > 0)
 			{
@@ -81,7 +81,7 @@ class LinkedList  {
 			}
 			else
 			{
-				Node new_node = new Node(datumA, keyA, null);
+				Node <T> new_node = new Node<T>(datumA, keyA, null);
 				before.nextM = new_node;
 				sizeM++;
 			}
@@ -95,7 +95,7 @@ class LinkedList  {
 		
 	  if (headM == null || keyA.compareTo(headM.keyM) < 0)
 	    return;
-	  Node doomed_node = null;
+	  Node <T> doomed_node = null;
 
 	  if (keyA.compareTo(headM.keyM) == 0) {
 	    doomed_node = headM;
@@ -104,8 +104,8 @@ class LinkedList  {
 	    sizeM--;
 	  }
 	  else {
-	    Node before = headM;
-	    Node maybe_doomed = headM.nextM;
+	    Node <T> before = headM;
+	    Node <T> maybe_doomed = headM.nextM;
 	    while(maybe_doomed != null && keyA.compareTo(maybe_doomed.keyM) >0 ) {
 	      before = maybe_doomed;
 	      maybe_doomed = maybe_doomed.nextM;
@@ -127,7 +127,7 @@ class LinkedList  {
 
 	void   find(Integer keyA )
 	{
-	  Node ptr=headM;
+	  Node <T> ptr=headM;
 	  while (ptr!= null && (ptr.keyM.compareTo(keyA) >0 || ptr.keyM.compareTo(keyA) < 0))
 		{
 			ptr=ptr.nextM;
