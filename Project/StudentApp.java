@@ -90,8 +90,8 @@ public class StudentApp extends JFrame {
 		buttonPanel.add(createTreeBtn);
 		titlePanel.add(title, BorderLayout.CENTER);
 		JScrollPane scrollPane = new JScrollPane(mainScreen);
-		
-		/*Adds panels to frame*/
+
+		/* Adds panels to frame */
 		this.add(titlePanel, BorderLayout.NORTH);
 		this.add(buttonPanel, BorderLayout.SOUTH);
 		this.add(scrollPane, BorderLayout.CENTER);
