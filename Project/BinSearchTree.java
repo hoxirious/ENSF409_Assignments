@@ -1,11 +1,10 @@
 import java.io.*;
 import javax.swing.JOptionPane;
+// TODO: Auto-generated Javadoc
 /**
  * The following class called BinSearchTree creates an empty 
  * tree, and allows the user of the class to insert new nodes into the tree.  
  */
-
- 
 
 class BinSearchTree {
 	
@@ -53,16 +52,20 @@ class BinSearchTree {
 		}
 	}
 	
-	/** 
-	 * Returns true if tree is empty 
+	/**
+	 *  
+	 * Returns true if tree is empty .
+	 *
+	 * @return true, if empty
 	 */
 	
 	public boolean empty() {
 		return (root == null);
 	}
 	
-	/** 
-	 * removes all nodes 
+	/**
+	 *  
+	 * removes all nodes.
 	 */
 	
 	public void destroy() {
@@ -70,6 +73,9 @@ class BinSearchTree {
 		root = null;
 	}
 	
+	/**
+	 * Splice.
+	 */
 	public void splice() {
 		if(!empty()){
 			
@@ -128,18 +134,20 @@ class BinSearchTree {
     
 	/**
 	 * Function that recursively display the data. 
+	 *
 	 * @param cur - current node
-	 * @param out - the output stream to print the node information
-	 * @throws IOException
+	 * @param output - the output stream to print the node information
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
-	public void print_tree(Node cur, PrintWriter out) throws IOException {
+	public void print_tree(Node cur, PrintWriter output) throws IOException {
 		if (cur.left!=null)
-			print_tree(cur.left,out);
-		String s = cur.data.id+"        "+cur.data.faculty+"     "+
+			print_tree(cur.left,output);
+		String s = cur.data.id + "        "
+				+ cur.data.faculty+"     "+
                                  cur.data.major+ "       "+cur.data.year + "\n";
-		out.println(s);
-		System.out.println(s);
+		output.println(s);
+//		System.out.println(s);
 		if (cur.right!=null)
-			print_tree(cur.right,out);
+			print_tree(cur.right,output);
 	} 
 }
