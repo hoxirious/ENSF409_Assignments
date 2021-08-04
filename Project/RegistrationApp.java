@@ -14,7 +14,7 @@ public class RegistrationApp implements Runnable {
 		application();
 	}
 	
-	public void application() {
+	private void application() {
 		String [] answer;
 		String courseName = "";
 		int choice = 0;
@@ -30,8 +30,6 @@ public class RegistrationApp implements Runnable {
 				switch(choice) {
 				
 				case 1:
-					response = "Enter the course name and number(white space between them): ";
-					socketOut.println(response);
 					answer = socketIn.readLine().split("\\s+");
 					if (answer.length != 2) {
 						response = "Invalid Input";
@@ -40,12 +38,12 @@ public class RegistrationApp implements Runnable {
 					}
 					courseName = answer[0];
 					courseNum = Integer.parseInt(answer[1]);
-					response = "This is a test. This will do nothing";
+					response = "This is a test. This will do nothing"  + courseName + courseNum ;
 					socketOut.println(response);
 					break;
 				
 				case 2: 
-					response = "Enter student id, course name, number and section number (white space between each of them):  ";
+					response = "2:  ";
 					socketOut.println(response);
 					answer = socketIn.readLine().split("\\s+");
 					if (answer.length != 4) {
@@ -62,7 +60,7 @@ public class RegistrationApp implements Runnable {
 					break;
 					
 				case 3:
-					response = "Enter student id, course name, number and section number (white space between each of them):  ";
+					response = "3:  ";
 					socketOut.println(response);
 					answer = socketIn.readLine().split("\\s+");
 					if (answer.length != 4) {
@@ -77,7 +75,6 @@ public class RegistrationApp implements Runnable {
 					response = "This is a test. This will do nothing";
 					socketOut.println(response);
 					break;
-					
 				case 4:
 					response = "This is a test. This will do nothing";
 					socketOut.println(response);
@@ -99,6 +96,7 @@ public class RegistrationApp implements Runnable {
 				default:
 					response = "Wrong input";
 					socketOut.println(response);
+					System.exit(0);
 				}
 				
 			} catch (IOException e) {
