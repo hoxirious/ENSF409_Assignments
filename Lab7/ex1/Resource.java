@@ -6,5 +6,4 @@ public class Resource {
 	synchronized public int increment() {
 		return counter++;
 	}
-	
 }

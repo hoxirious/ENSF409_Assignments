@@ -1,0 +1,426 @@
+[33mcommit 43a233d6025ef5998b471291c143c57be83abc2e[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Wed Aug 4 15:40:40 2021 -0600
+
+    Revert "fix extra blank line output"
+    
+    This reverts commit cdcddd5424f89bb5573211b5864eeff648879401.
+
+[33mcommit cdcddd5424f89bb5573211b5864eeff648879401[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Wed Aug 4 15:38:44 2021 -0600
+
+    fix extra blank line output
+
+[33mcommit b8a63cf8c5b0fb8991b6a107e4f94a67d160982a[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Wed Aug 4 13:15:59 2021 -0600
+
+    fix bugs on option 1
+
+[33mcommit 26e8ba98d837692cdb5b496878b4b259238583c1[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Wed Aug 4 11:41:50 2021 -0600
+
+    Creating error version of RegistrationServer.java
+
+[33mcommit 0a223b80a0c4b1cb3f3bf486fed21be3310671fb[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Wed Aug 4 10:55:19 2021 -0600
+
+    Adding Client.java RegistrationServer.java RegistrationApp.java
+
+[33mcommit 6f32c209a6e8dffd1b2d021f39ec170ff3524026[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Wed Aug 4 02:47:17 2021 -0600
+
+    completed pre-exercise
+
+[33mcommit 75afacdb00c08844a56fd9f97273fd7b05a9a8a4[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Tue Aug 3 13:21:00 2021 -0600
+
+    first commit on project
+
+[33mcommit 3d9436e21f4f737583cf23242d329c0e5b776412[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Sat Jul 31 15:14:08 2021 -0600
+
+    Finishing ex 3
+
+[33mcommit 42287d41ebcbd0850b9e1441fd3fab36540c907d[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Thu Jul 29 22:41:06 2021 -0600
+
+    remove syncronized
+
+[33mcommit aa4c32196b0b7f99272ac342ddafc7d774c079f2[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Thu Jul 29 15:38:30 2021 -0600
+
+    Completing ex1
+
+[33mcommit 5369efc948f56d1e795434cc1fffbe92bcd53a3c[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Thu Jul 29 15:34:12 2021 -0600
+
+    completed lab7 ex2
+
+[33mcommit 93766fbf344e57d7d0c22d312fedc9131e0805f0[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Tue Jul 27 21:19:11 2021 -0600
+
+    comment on Reviewers part
+
+[33mcommit be5c4ad2f030bef3ef666a0d3363ba932f0c6237[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Tue Jul 27 17:09:59 2021 -0600
+
+    Fixing lab06 ex01
+
+[33mcommit 2ae3b2f8fbacdaab9d4d87a5659fd0968046a651[m
+Merge: ee9b435 cd213f6
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Tue Jul 27 11:24:47 2021 -0600
+
+    Completing half of ex 01
+
+[33mcommit ee9b4359677fa5bd4c451f12382ef7f39ffc34aa[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Tue Jul 27 11:22:27 2021 -0600
+
+    Adding Lab06 exercise 1
+
+[33mcommit cd213f663bba1a51564f3167c6594b9e16914ded[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Mon Jul 26 15:38:46 2021 -0600
+
+    first commit on lab 7
+
+[33mcommit 18b5f7150ad804110a8d9fac237a23044b72e9aa[m
+Merge: bc9de4d 8cd773e
+Author: hoxirious <giahy33@gmail.com>
+Date:   Mon Jul 26 15:37:20 2021 -0600
+
+    Merge branch 'main' of github.com:hoxirious/ENSF409_Assignments into main
+
+[33mcommit bc9de4da8717d0c3649f85258db3c66f7e0dfc26[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Mon Jul 26 15:37:08 2021 -0600
+
+    completed lab 6 ex 2
+
+[33mcommit 8cd773e82aaf7088853c71215de07dbfbd826052[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Sun Jul 25 12:12:17 2021 -0600
+
+    Completing lab 05 ex 01 and 02
+
+[33mcommit 22512d391e455762137803f333c8c874b7235178[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Sat Jul 24 10:25:40 2021 -0600
+
+    lab05 ex02 implementing Accessible Interface
+
+[33mcommit 38f89d8c8f6b68098ac559863688d5dac4d3f2e2[m
+Merge: eee14d7 0a7c16d
+Author: hoxirious <giahy33@gmail.com>
+Date:   Fri Jul 23 22:54:31 2021 -0600
+
+    merge conflicts
+
+[33mcommit eee14d750d0134ccc60f69d5b524c5cfc0ba0c4b[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Fri Jul 23 22:52:00 2021 -0600
+
+    some change on ex 1
+
+[33mcommit 0a7c16dc8c7126835cef04e2c28024c59becfe33[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Fri Jul 23 22:49:49 2021 -0600
+
+    Fixing Lab04Ex01 and Lab05Ex01
+
+[33mcommit 3b07c56093927c8b437bde546f99523f10c38787[m
+Merge: 0f21276 6e1f616
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Fri Jul 23 22:23:31 2021 -0600
+
+    Merge branch 'main' of https://github.com/hyhuynh/ENSF409_Assignments
+
+[33mcommit 0f21276aa791b8c7f69044704ff017224c0e17bc[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Fri Jul 23 22:22:34 2021 -0600
+
+    Implementing Resizable Interface
+
+[33mcommit 6e1f61639b00af0b569dc86f6014757e0dc1f643[m
+Merge: 7b351d3 5d77fff
+Author: hoxirious <giahy33@gmail.com>
+Date:   Fri Jul 23 19:50:23 2021 -0600
+
+    add package
+
+[33mcommit 7b351d3f8f37ebdcbc59f4f9a5712901d300024b[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Fri Jul 23 19:44:35 2021 -0600
+
+    refactor Sums.java
+
+[33mcommit 16f3454f4acbd7338cddfdcb3c84eb374b78a27c[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Fri Jul 23 19:27:12 2021 -0600
+
+    Change error output on console
+
+[33mcommit 5d77fffb346a0b410bd1ea52a33b8df32bd23e26[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Fri Jul 23 19:20:55 2021 -0600
+
+    Exercise 1 complete
+
+[33mcommit dc7b21b090c3137c061f153be347cf147cd50c9e[m
+Merge: c62011f 12b7306
+Author: hoxirious <giahy33@gmail.com>
+Date:   Fri Jul 23 14:42:24 2021 -0600
+
+    Merge branch 'main' of github.com:hyhuynh/ENSF409_Assignments into main
+
+[33mcommit c62011f5eb17397ec8357c89e39e2bbf8e059398[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Fri Jul 23 14:42:02 2021 -0600
+
+    format files
+
+[33mcommit 8a186418f049489dbbff17108f0c051b4d71eaa8[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Fri Jul 23 14:39:03 2021 -0600
+
+    completed lab 5 ex 3
+
+[33mcommit 12b7306d756479222f0864a87d9af66d76651d15[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Fri Jul 23 13:41:45 2021 -0600
+
+    Completing exercise 1 and 2
+
+[33mcommit 744f4c923b14b85ddb55b4caf42c200f32aeb358[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Fri Jul 23 00:47:33 2021 -0600
+
+    Adding codes to showAll and calculator function
+
+[33mcommit 537729a5b0d24354474ae9e1b93404a3c97d46ed[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Fri Jul 23 00:36:54 2021 -0600
+
+    fix bug add
+
+[33mcommit 6a85138b7f15b551bac543db3d6e09f602a5a39d[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Thu Jul 22 23:38:54 2021 -0600
+
+    Adding codes to Geometry.java
+
+[33mcommit 51aa8bc6088385a14ebf5a63f7a92aba9612854d[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Thu Jul 22 22:54:46 2021 -0600
+
+    change makeMove into abstract
+
+[33mcommit f4765259c225672e743e8f41855b47c720586f27[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Thu Jul 22 21:55:11 2021 -0600
+
+    reallocate .java files
+
+[33mcommit 5dd6bd05ce7c6b7a3005b1443e560f130bc6ed4d[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Thu Jul 22 21:47:47 2021 -0600
+
+    add javadoc
+
+[33mcommit ad9cc0d1056a33557518cc3f718a6957e7e949ce[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Thu Jul 22 20:28:17 2021 -0600
+
+    ignore *.class
+
+[33mcommit b31a162d85e57afff30d1a7358d0abdc0023089d[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Thu Jul 22 20:18:35 2021 -0600
+
+    modified gitignore
+
+[33mcommit ce50f928896228d9e7c42614c0d652f96a11bdef[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Thu Jul 22 20:05:44 2021 -0600
+
+    added .gitignore
+
+[33mcommit adf9adb55d0591db34413269b5f8ca584e560cda[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Thu Jul 22 20:04:22 2021 -0600
+
+    completed ex3 lab4
+
+[33mcommit 502782012cc63233b11f3f4426284a358391f6e7[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Thu Jul 22 15:13:15 2021 -0600
+
+    reallocate files v2
+
+[33mcommit 72433a97f596f2e269eb53460c1de01bf29a540b[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Thu Jul 22 14:49:12 2021 -0600
+
+    realocate files
+
+[33mcommit 26a8be444d6fa76b89f6633275a4525f2aa8fc86[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Thu Jul 22 14:01:58 2021 -0600
+
+    Initial commit lab4
+
+[33mcommit 3db046ed81f0e13d7f464f2d128d9bb32b96d87c[m
+Merge: d522ed3 b22f081
+Author: hoxirious <giahy33@gmail.com>
+Date:   Thu Jul 22 10:01:49 2021 -0600
+
+    Merge branch 'main' of github.com:hyhuynh/ENSF409_Assignments into main
+
+[33mcommit d522ed3d7bcafbedf6d9605fe088fd167a85a986[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Thu Jul 22 10:01:34 2021 -0600
+
+    Initial commit on lab 4 5
+
+[33mcommit b22f081086070a5b483e5a7c99e9943ffbac7674[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Mon Jul 19 08:24:10 2021 -0600
+
+    Adding Javadoc to Lab 3 ex 1
+
+[33mcommit 58e645650ec5e416cda5ae700d39261b059a9f32[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Sun Jul 18 23:55:22 2021 -0600
+
+    ex1 + ex3 UML
+
+[33mcommit b158ab71a1c56fb29934365eebc733b9ff029575[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Sun Jul 18 23:54:38 2021 -0600
+
+    delete .class
+
+[33mcommit 733584fccfbbd82543879a2df75850b1317ad80b[m
+Merge: 6c5a66d 44ab684
+Author: hoxirious <giahy33@gmail.com>
+Date:   Sun Jul 18 23:20:37 2021 -0600
+
+    Merge branch 'main' of github.com:hyhuynh/ENSF409_Assignments into main
+
+[33mcommit 6c5a66d28b30a3952d6356e31f52c0ea1e264e2b[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Sun Jul 18 23:20:23 2021 -0600
+
+    deleted Date.java
+
+[33mcommit 44ab6843ad636e64a0042cff4d4382aeef8fc2e3[m
+Author: Hy Huynh <65211251+hyhuynh@users.noreply.github.com>
+Date:   Sun Jul 18 23:19:15 2021 -0600
+
+    Delete Date.class
+
+[33mcommit 761de86b1a8131162d00778b89d90a311776600d[m
+Merge: 0237f63 4f8daff
+Author: hoxirious <giahy33@gmail.com>
+Date:   Sun Jul 18 23:17:31 2021 -0600
+
+    Merge branch 'main' of github.com:hyhuynh/ENSF409_Assignments into main
+
+[33mcommit 0237f6342fab25d36fbafd20edab4a63bf63ec32[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Sun Jul 18 23:15:27 2021 -0600
+
+    completed ex1 lab3
+
+[33mcommit 4f8daffee517bde2975f63771941b5ed7e18e5e1[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Sun Jul 18 22:00:18 2021 -0600
+
+    Adding javadoc and reorganizing for lab 2
+
+[33mcommit baefe7efab099e273f85ed1c88a2dedcc1779fba[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Sun Jul 18 20:15:05 2021 -0600
+
+    Add exercise 2 lab 3
+
+[33mcommit 019e275eb9e2a8595020d5333ebeac1b90761b4d[m
+Merge: d6b5535 477739a
+Author: hoxirious <giahy33@gmail.com>
+Date:   Sat Jul 17 13:10:35 2021 -0600
+
+    Merge branch 'main' of github.com:hyhuynh/ENSF409_Assignments into main
+
+[33mcommit d6b55352776395e62a6baa73d01575dbb5ddd217[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Sat Jul 17 13:10:14 2021 -0600
+
+    initial commit ex1 lab3
+
+[33mcommit 477739a8f353aa1ece3063dbc93acae715218f46[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Wed Jul 14 19:34:54 2021 -0600
+
+    Finishing exercise 2
+
+[33mcommit a14e537ba417e74d1947c7d3f76322015b4e0a9e[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Wed Jul 14 13:53:16 2021 -0600
+
+    completed ex4
+
+[33mcommit 1d65a5d4111caa7513a7df56068c364bdacdd63e[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Wed Jul 14 11:21:19 2021 -0600
+
+    first commit on lab2
+
+[33mcommit bbb3b35f45791e898b18708f27e7496322bd1883[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Sat Jul 10 14:37:01 2021 -0600
+
+    final format submission
+
+[33mcommit 591939cedbfe31aadab80f8d8ee2c7c19768c2c5[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Thu Jul 8 10:43:28 2021 -0600
+
+    added javadoc simplelist
+
+[33mcommit 0607e247b7677f8d8d36113f08c1db14ebb3c1a8[m
+Merge: 501e441 c149593
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Thu Jul 8 10:28:48 2021 -0600
+
+    MiseesMerge branch 'main' of https://github.com/hyhuynh/ENSF409_Assignments
+
+[33mcommit 501e44144544a71038ecf120e42d6d6923b42cea[m
+Author: unknown <haodnguyen2601@gmail.com>
+Date:   Thu Jul 8 10:28:12 2021 -0600
+
+    Adding codes for exercise 1, 2, 4 and 5
+
+[33mcommit c149593ab1c1bd725413f90c4b8acf4e7f3d5ffa[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Wed Jul 7 15:36:34 2021 -0600
+
+    Done 3 6 7
+
+[33mcommit 72140eacad0a7e7219a1fcb5eb4a36a1a6915295[m
+Author: hoxirious <giahy33@gmail.com>
+Date:   Mon Jul 5 22:38:55 2021 -0600
+
+    first commit lab 1

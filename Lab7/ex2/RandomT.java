@@ -8,12 +8,17 @@ public class RandomT {
 
 	/** The number. */
 	private int number;
+	private static int s; 
 
 	/**
 	 * Instantiates a new random T.
 	 */
 	public RandomT() {
 		randomize();
+	}
+	
+	public static void add () {
+		this.s = 2; 
 	}
 
 	/**
@@ -42,5 +47,10 @@ public class RandomT {
 	public int getNum() {
 		return number;
 	}
+	
+	public static void main(String []args){
+		RandomT a = new RandomT(); 
+		a.add();
+     }
 
 }
