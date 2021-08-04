@@ -33,7 +33,9 @@ public class RegistrationServer {
 				System.out.println("Connection accepted by server!");
 			    socketIn = new BufferedReader(new InputStreamReader(aSocket.getInputStream()));
 				socketOut = new PrintWriter((aSocket.getOutputStream()), true);
+				RegistrationApp app = new RegistrationApp(socketIn, socketOut);
 				
+				pool.execute(app);
 			}
 		} catch (IOException e) {
 			e.getStackTrace();

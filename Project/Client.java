@@ -54,14 +54,6 @@ public class Client {
 					socketOut.println(line);
 					response = socketIn.readLine();
 					System.out.println(response);
-					line = stdIn.readLine();
-					socketOut.println(line);
-					response = socketIn.readLine();
-					System.out.println(response);
-					line = stdIn.readLine();
-					socketOut.println(line);
-					response = socketIn.readLine();
-					System.out.println(response);
 					
 				case 3: 
 					response = socketIn.readLine();
