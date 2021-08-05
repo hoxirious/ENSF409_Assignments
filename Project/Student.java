@@ -78,11 +78,9 @@ public class Student {
 			}
 		}
 		if (count == prereq.size()) {
-			System.out.println("The student is qualified to register the course");
 			return true;
 		}
 		else {
-			System.out.println("The student is not qualified to register the course");
 			return false;
 		}
 	}
@@ -91,12 +89,12 @@ public class Student {
 		for (int i = 0; i < studentRegList.size(); i++) {
 			if (course.getCourseName().equals(studentRegList.get(i).getTheOffering().getTheCourse().getCourseName())
 					&& course.getCourseNum() == studentRegList.get(i).getTheOffering().getTheCourse().getCourseNum()) {
-				System.out.println("This student has taken this course");
 				return true;
 			}
 		}
 		return false;
 	}
+	
 	
 
 }

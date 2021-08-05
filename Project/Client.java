@@ -27,7 +27,6 @@ public class Client {
 	public void communicate() {
 
 		String line = "";
-		String [] responseLine;
 		String response = "";
 
 		appHeader();
@@ -44,6 +43,7 @@ public class Client {
 					while ((response = socketIn.readLine()) != null && socketIn.ready()) {
 						System.out.println(response);
 					}
+//					
 //					System.out.println("Enter student id, course name, number and section number");
 //					line = stdIn.readLine();
 //					socketOut.println(line);
@@ -56,7 +56,9 @@ public class Client {
 //					response = socketIn.readLine();
 //					System.out.println(response);
 //
-//					while ((response = socketIn.readLine()) != null) {
+//					System.out.println("Type confirm to print out the catalouge");
+//					line = stdIn.readLine();
+//				    while (socketIn.ready() && (response = socketIn.readLine()) != null) {
 //						System.out.println(response);
 //					}
 //
@@ -65,6 +67,7 @@ public class Client {
 //					socketOut.println(line);
 //					while ((response = socketIn.readLine()) != null) {
 //						System.out.println(response);
+//					}
 					
 			} catch (IOException e) {
 				e.printStackTrace();
