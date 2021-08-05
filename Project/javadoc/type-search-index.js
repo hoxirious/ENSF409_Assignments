@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"<Unnamed>","l":"BinSearchTree"},{"p":"<Unnamed>","l":"Data"},{"p":"<Unnamed>","l":"FileManager"},{"p":"<Unnamed>","l":"InsertStudentGUI"},{"p":"<Unnamed>","l":"Node"},{"p":"<Unnamed>","l":"StudentApp"}]

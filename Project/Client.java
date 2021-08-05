@@ -27,72 +27,45 @@ public class Client {
 	public void communicate() {
 
 		String line = "";
-		int choice = 0;
+		String [] responseLine;
 		String response = "";
 
 		appHeader();
 
-		while (choice != 6) {
+		while (!line.contentEquals("QUIT")) {
 			try {
-				Menu();
-				choice = Integer.parseInt(stdIn.readLine());
-				socketOut.println(choice);
-				switch (choice) {
-				case 1:
+//				Menu();
+//				choice = Integer.parseInt(stdIn.readLine());
+//				socketOut.println(choice);
+
 					System.out.println("Enter the course name and number(white space between them): ");
 					line = stdIn.readLine();
 					socketOut.println(line);
-					while ((response = socketIn.readLine()) != null) {
+					while ((response = socketIn.readLine()) != null && socketIn.ready()) {
 						System.out.println(response);
 					}
-					break;
-
-				case 2:
-					response = socketIn.readLine();
-					System.out.println(response);
-					line = stdIn.readLine();
-					socketOut.println(line);
-					response = socketIn.readLine();
-					System.out.println(response);
-					break;
-				case 3:
-					response = socketIn.readLine();
-					System.out.println(response);
-					line = stdIn.readLine();
-					socketOut.println(line);
-					response = socketIn.readLine();
-					System.out.println(response);
-					line = stdIn.readLine();
-					socketOut.println(line);
-					response = socketIn.readLine();
-					System.out.println(response);
-					line = stdIn.readLine();
-					socketOut.println(line);
-					response = socketIn.readLine();
-					System.out.println(response);
-					break;
-
-				case 4:
-					while ((response = socketIn.readLine()) != null) {
-						System.out.println(response);
-					}
-					break;
-
-				case 5:
-					response = socketIn.readLine();
-					System.out.println(response);
-					line = stdIn.readLine();
-					socketOut.println(line);
-					while ((response = socketIn.readLine()) != null) {
-						System.out.println(response);
-					}
-					break;
-
-				default:
-					response = socketIn.readLine();
-					System.out.println(response);
-					System.exit(0);
-				}
+//					System.out.println("Enter student id, course name, number and section number");
+//					line = stdIn.readLine();
+//					socketOut.println(line);
+//					response = socketIn.readLine();
+//					System.out.println(response);
+//					
+//					System.out.println("Enter student id, course name, number and section number");
+//					line = stdIn.readLine();
+//					socketOut.println(line);
+//					response = socketIn.readLine();
+//					System.out.println(response);
+//
+//					while ((response = socketIn.readLine()) != null) {
+//						System.out.println(response);
+//					}
+//
+//					System.out.println("Enter student id: ");
+//					line = stdIn.readLine();
+//					socketOut.println(line);
+//					while ((response = socketIn.readLine()) != null) {
+//						System.out.println(response);
+					
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

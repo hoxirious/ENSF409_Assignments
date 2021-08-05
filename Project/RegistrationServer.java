@@ -4,27 +4,24 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+
 
 public class RegistrationServer {
 	
-	private Socket aSocket;
-	private ServerSocket serverSocket;
-	private PrintWriter socketOut;
-	private BufferedReader socketIn;
 
-	private ExecutorService pool;
-	
-	public RegistrationServer (int port) {
-		try {
-			serverSocket = new ServerSocket(port);
-			pool = Executors.newFixedThreadPool(3); // can run max 3 people
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		private Socket aSocket;
+		private ServerSocket serverSocket;
+		private PrintWriter socketOut;
+		private BufferedReader socketIn;
+
+		public RegistrationServer(int port) {
+			try {
+				serverSocket = new ServerSocket(port);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-	}
 	
 	public void runServer() {
 		try {
@@ -33,9 +30,12 @@ public class RegistrationServer {
 				System.out.println("Connection accepted by server!");
 			    socketIn = new BufferedReader(new InputStreamReader(aSocket.getInputStream()));
 				socketOut = new PrintWriter((aSocket.getOutputStream()), true);
+				
 				RegistrationApp app = new RegistrationApp(socketIn, socketOut);
 				
-				pool.execute(app);
+				Thread t1 = new Thread (app);
+				t1.run();
+				
 			}
 		} catch (IOException e) {
 			e.getStackTrace();
