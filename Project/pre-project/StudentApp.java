@@ -72,6 +72,7 @@ public class StudentApp extends JFrame {
 		title = new JLabel(programName);
 
 		mainScreen = new JTextArea(5, 30);
+		mainScreen.setEditable(false);
 
 		screenPanel = new JScrollPane() {
 			private static final long serialVersionUID = 1L;
