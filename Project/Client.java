@@ -25,24 +25,20 @@ public class Client {
 	}
 
 	public void communicate() {
-
+		RegistrationGUI gui = new RegistrationGUI(socketIn, socketOut);
 		String line = "";
 		String response = "";
-
-		appHeader();
-
+		
 		while (!line.contentEquals("QUIT")) {
-			try {
+//			try {
 //				Menu();
 //				choice = Integer.parseInt(stdIn.readLine());
 //				socketOut.println(choice);
 
-					System.out.println("Enter the course name and number(white space between them): ");
-					line = stdIn.readLine();
-					socketOut.println(line);
-					while ((response = socketIn.readLine()) != null && socketIn.ready()) {
-						System.out.println(response);
-					}
+//					System.out.println("Enter the course name and number(white space between them): ");
+//					line = stdIn.readLine();
+//					socketOut.println(line);
+					
 //					
 //					System.out.println("Enter student id, course name, number and section number");
 //					line = stdIn.readLine();
@@ -69,38 +65,39 @@ public class Client {
 //						System.out.println(response);
 //					}
 					
-			} catch (IOException e) {
-				e.printStackTrace();
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+
 			}
-
-		}
-
 		try {
-			stdIn.close();
-			socketIn.close();
-			socketOut.close();
+			if (Integer.parseInt(socketIn.readLine()) == 6) {
+				stdIn.close();
+				socketIn.close();
+				socketOut.close();
+			}
 		} catch (IOException e) {
 			e.getStackTrace();
 		}
 	}
 
-	public void appHeader() {
-		System.out.println("Student Registration v3");
-		System.out.println("Made by: Hao Nguyen and Hy Huynh");
-		System.out.println("Release Date: 07/06/2021");
-	}
-
-	public void Menu() {
-		System.out.println("Main Menu");
-		System.out.println("Please select one of the following operations");
-		System.out.println("1. Search catalouge Courses");
-		System.out.println("2. Add course to Student Courses");
-		System.out.println("3. Remove course from Student Courses");
-		System.out.println("4. View All Courses in Catalogue");
-		System.out.println("5. View all courses taken by Student");
-		System.out.println("6. Quit");
-		System.out.print("Please input your choice: ");
-	}
+//	public void appHeader() {
+//		System.out.println("Student Registration v3");
+//		System.out.println("Made by: Hao Nguyen and Hy Huynh");
+//		System.out.println("Release Date: 07/06/2021");
+//	}
+//
+//	public void Menu() {
+//		System.out.println("Main Menu");
+//		System.out.println("Please select one of the following operations");
+//		System.out.println("1. Search catalouge Courses");
+//		System.out.println("2. Add course to Student Courses");
+//		System.out.println("3. Remove course from Student Courses");
+//		System.out.println("4. View All Courses in Catalogue");
+//		System.out.println("5. View all courses taken by Student");
+//		System.out.println("6. Quit");
+//		System.out.print("Please input your choice: ");
+//	}
 
 	public static void main(String[] args) throws IOException {
 		Client myClient = new Client("localhost", 9898);

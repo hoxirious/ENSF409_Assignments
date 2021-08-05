@@ -7,7 +7,7 @@ public class Registration {
 	void completeRegistration (Student st, CourseOffering of) {
 		theStudent = st;
 		theOffering = of;
-		addRegistration ();
+		addRegistration();
 	}
 	
 	void cancelRegistration (Student st, CourseOffering of) {

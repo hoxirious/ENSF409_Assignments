@@ -17,5 +17,4 @@ public class DBManager {
 		courseList.add(new Course ("PHYS", 259));
 		return courseList;
 	}
-
 }
