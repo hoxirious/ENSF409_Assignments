@@ -4,6 +4,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public class RegistrationServer {
@@ -13,10 +15,13 @@ public class RegistrationServer {
 		private ServerSocket serverSocket;
 		private PrintWriter socketOut;
 		private BufferedReader socketIn;
+		
+		private ExecutorService pool;
 
 		public RegistrationServer(int port) {
 			try {
 				serverSocket = new ServerSocket(port);
+				pool = Executors.newFixedThreadPool(2);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -33,8 +38,7 @@ public class RegistrationServer {
 				
 				RegistrationApp app = new RegistrationApp(socketIn, socketOut);
 				
-				Thread t1 = new Thread (app);
-				t1.run();
+				pool.execute(app);
 				
 			}
 		} catch (IOException e) {
