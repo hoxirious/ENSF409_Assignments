@@ -1,14 +1,15 @@
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class CourseCatalogue {
 	
 	private ArrayList <Course> courseList;
 	
-	public CourseCatalogue () {
+	public CourseCatalogue () throws IOException {
 		loadFromDataBase ();
 	}
 	
-	private void loadFromDataBase() {
+	private void loadFromDataBase() throws IOException {
 		// TODO Auto-generated method stub
 		DBManager db = new DBManager();
 		setCourseList(db.readFromDataBase());

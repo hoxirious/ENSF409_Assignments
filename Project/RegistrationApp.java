@@ -8,31 +8,37 @@ public class RegistrationApp implements Runnable {
 
 	private CourseCatalogue cat;
 
-	Student st = new Student("Sara", 1);
-	Student st2 = new Student("Sam", 2);
+//	Student st = new Student("Sara", 1);
+//	Student st2 = new Student("Sam", 2);
 
 	ArrayList<Student> slist;
+	
+	DBManager db;
 
 	Registration reg;
 
-	public RegistrationApp(BufferedReader in, PrintWriter out) {
+	public RegistrationApp(BufferedReader in, PrintWriter out) throws IOException {
 		socketOut = out;
 		socketIn = in;
 
 		cat = new CourseCatalogue();
+		
+		db = new DBManager();
 
-		slist = new ArrayList<Student>();
-		slist.add(st);
-		slist.add(st2);
+		slist = db.readFromDB();
+		
+		
+//		slist.add(st);
+//		slist.add(st2);
 
-		Course myCourse = cat.searchCat("ENGG", 233);
-		if (myCourse != null) {
-			cat.createCourseOffering(myCourse, 1, 100);
-			cat.createCourseOffering(myCourse, 2, 200);
-		}
-
-		reg = new Registration();
-		reg.completeRegistration(st, myCourse.getCourseOfferingAt(0));
+//		Course myCourse = cat.searchCat("ENGG", 233);
+//		if (myCourse != null) {
+//			cat.createCourseOffering(myCourse, 1, 100);
+//			cat.createCourseOffering(myCourse, 2, 200);
+//		}
+//
+//		reg = new Registration();
+//		reg.completeRegistration(st, myCourse.getCourseOfferingAt(0));
 
 	}
 
