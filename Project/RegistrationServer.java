@@ -39,7 +39,6 @@ public class RegistrationServer {
 				RegistrationApp app = new RegistrationApp(socketIn, socketOut);
 				
 				pool.execute(app);
-				
 			}
 		} catch (IOException e) {
 			e.getStackTrace();

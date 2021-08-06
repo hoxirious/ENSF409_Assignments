@@ -1,8 +1,9 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,11 +19,12 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+
 public class RegistrationGUI extends JFrame {
 	/** The Constant programName. */
 	private final static String programName = "Registration Application";
 	private final static String[] buttonList = { "Show courses", "Student Courses", "Add Course", "Search Course",
-			"Create Database", "Delete Course " };
+			"Save Database", "Delete Course " };
 	private final static String[] questionList = { "Please enter course name: ", "Please enter course number: ",
 			"Please enter student's id: ", "Please enter section number: " };
 	private PrintWriter socketOut;
@@ -30,7 +32,7 @@ public class RegistrationGUI extends JFrame {
 
 	/* Variables Declaration */
 	private JTextArea mainScreen;
-	private JButton showCatalogueBtn, showStudentCoursesBtn, addCourseBtn, searchCourseBtn, createDatabaseBtn,
+	private JButton showCatalogueBtn, showStudentCoursesBtn, addCourseBtn, searchCourseBtn, saveDatabaseBtn,
 			deleteCourseBtn;
 	private JPanel titlePanel, buttonPanel, containerPanel, searchPanel, coursePanel;
 
@@ -58,7 +60,7 @@ public class RegistrationGUI extends JFrame {
 		showStudentCoursesBtn = new JButton(buttonList[1]);
 		addCourseBtn = new JButton(buttonList[2]);
 		searchCourseBtn = new JButton(buttonList[3]);
-		createDatabaseBtn = new JButton(buttonList[4]);
+		saveDatabaseBtn = new JButton(buttonList[4]);
 		deleteCourseBtn = new JButton(buttonList[5]);
 		courseName1TF = new JTextField(5);
 		courseNum1TF = new JTextField(5);
@@ -92,7 +94,7 @@ public class RegistrationGUI extends JFrame {
 		buttonPanel.add(addCourseBtn);
 		buttonPanel.add(deleteCourseBtn);
 		buttonPanel.add(searchCourseBtn);
-		buttonPanel.add(createDatabaseBtn);
+		buttonPanel.add(saveDatabaseBtn);
 
 		coursePanel.add(studentIdLB);
 		coursePanel.add(studentIdTF);
@@ -218,10 +220,25 @@ public class RegistrationGUI extends JFrame {
 		});
 
 		
-		createDatabaseBtn.addActionListener((ActionEvent e) -> {
+		saveDatabaseBtn.addActionListener((ActionEvent e) -> {
 			System.out.println(e.getActionCommand());
 		});
+			
+		this.addWindowListener(new WindowAdapter() {
 
+            @Override
+            public void windowClosing(WindowEvent e) {
+                socketOut.println("6");
+            }
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+            	socketOut.println("6");
+            }
+
+        });
+		
+		
 	}
 
 }
