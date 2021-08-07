@@ -114,8 +114,10 @@ public class RegistrationApp implements Runnable {
 			socketOut.println("This student did not take the course");
 			return;
 		}
+		
+		Registration regi = new Registration();
 
-		reg.cancelRegistration(slist.get(index), c.getCourseOfferingAt(secNum - 1));
+		regi.cancelRegistration(slist.get(index), c.getCourseOfferingAt(secNum - 1));
 		socketOut.println("The course has been removed from the student course");
 	}
 
