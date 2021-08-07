@@ -10,11 +10,13 @@ public class DBManager {
 	ArrayList <Course> courseList;
 	ArrayList <Student> studentList;
 
+	/** constructor **/
 	public DBManager () {
 		courseList = new ArrayList<Course>();
 		studentList = new ArrayList<Student>();
 	}
 
+	/** creating course list from the database**/
 	public ArrayList <Course> readFromDataBase() throws IOException {
 		// TODO Auto-generated method stub
 //		courseList.add(new Course ("ENGG", 233));
@@ -75,6 +77,7 @@ public class DBManager {
         return courseList;
 	}
 	
+	/** register students into the courses from database **/
 	public void register(Course course, ArrayList<Student> slist, RandomAccessFile arg, int secNum) throws IOException {
 		String tempR;
 		String [] regInfo;
@@ -100,6 +103,7 @@ public class DBManager {
 		
 	}
 	
+	/** creating student list from the database **/
 	public ArrayList <Student> readFromDB() throws IOException {
 		
 		RandomAccessFile ra1 = null;
@@ -152,6 +156,7 @@ public class DBManager {
 		return studentList;
 	}
 	
+	/** register courses into student courses from the database **/
 	public void studentReg(Student arg1, ArrayList<Course> arg2, RandomAccessFile arg3) throws IOException {
 		
 		String tempR;
@@ -181,6 +186,7 @@ public class DBManager {
 		
 	}
 	
+	/** saving course list, student list and register list into database (NOT WORKING - maybe try writeUTF) **/
 	public void saveDB(ArrayList<Student> slist, ArrayList<Course> clist) throws IOException {
 		
 		RandomAccessFile ra1 = null;

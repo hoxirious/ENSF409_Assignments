@@ -13,7 +13,9 @@ public class RegistrationApp implements Runnable {
 	
 	DBManager db;
 	Registration reg;
-
+	
+	
+    /**creating student list and course list, and register from the database**/
 	public RegistrationApp(BufferedReader in, PrintWriter out) throws IOException {
 		socketOut = out;
 		socketIn = in;
@@ -26,10 +28,12 @@ public class RegistrationApp implements Runnable {
 		clist = db.readFromDataBase();
 	}
 
+	/**each client is a thread, and this run function call the methods in RegistrationApp class**/
 	public void run() {
 		application();
 	}
 
+	/**this method is used to find the course in course catalouge using course name and course num as arguments**/
 	public void searchCourse(String courseName, int courseNum) {
 		Course c = cat.searchCat(courseName.toUpperCase(), courseNum);
 		if (c != null)
@@ -38,6 +42,7 @@ public class RegistrationApp implements Runnable {
 			socketOut.println("Course not found!\n");
 	}
 	
+	/**this method is used to saving student list, course list and registration lists into database files**/
 	public void saveToDatabase () {
 		try {
 			db.saveDB(slist, clist);			
@@ -46,7 +51,8 @@ public class RegistrationApp implements Runnable {
 			socketOut.println("Failed! Cannot save to the database");
 		}
 	}
-
+	
+   /**adding a course to student course (based on Lab 3 ex 2)**/
 	public void addStudentReg(int studentId, String courseName, int courseNum, int secNum) {
 		int index = -1;
 		for (int i = 0; i < slist.size(); i++) {
@@ -78,12 +84,14 @@ public class RegistrationApp implements Runnable {
 			return;
 		}
 
+		/** check if student has taken the course **/
 		if (slist.get(index).checkdupes(c) == true) {
 			socketOut.println("This student has already taken the course");
 			System.out.println("This student has already taken the course");
 			return;
 		}
 
+		/** check if student is qualified for the course **/
 		if (slist.get(index).checkpre(c) == false) {
 			socketOut.println("This student is not qualified for the course");
 			System.out.println("This student is not qualified for the course");
@@ -95,7 +103,8 @@ public class RegistrationApp implements Runnable {
 
 		socketOut.println("The course has been added to the student course");
 	}
-
+	
+    /** deleting a course from student courses **/
 	public void delStudentReg(int studentId, String courseName, int courseNum, int secNum) {
 		int index = -1;
 		for (int i = 0; i < slist.size(); i++) {
@@ -104,11 +113,13 @@ public class RegistrationApp implements Runnable {
 			}
 		}
 
+		/** check if student exist**/
 		if (index == -1) {
 			socketOut.println("No student found!");
 			return;
 		}
 
+		/** check if this student has taken any course **/
 		if (slist.get(index).getStudentRegList().size() == 0) {
 			socketOut.println("This student has not taken any course");
 			return;
@@ -116,11 +127,13 @@ public class RegistrationApp implements Runnable {
 
 		Course c = cat.searchCat(courseName, courseNum);
 
+		/** check if the course is in the list **/
 		if (c == null) {
 			socketOut.println("Course not Found!");
 			return;
 		}
 
+		/** check if the student take the course **/
 		if (slist.get(index).checkdupes(c) == false) {
 			socketOut.println("This student did not take the course");
 			return;
@@ -132,10 +145,12 @@ public class RegistrationApp implements Runnable {
 		socketOut.println("The course has been removed from the student course");
 	}
 
+	/** showing course catalogue **/
 	public void showCatalogue() {
 		socketOut.println(cat);
 	}
 
+	/** showing student infomation **/
 	public void showStudent(int studentId) {
 		int index = -1;
 		for (int i = 0; i < slist.size(); i++) {
@@ -153,16 +168,17 @@ public class RegistrationApp implements Runnable {
 
 	}
 
+	/** getting response from client-side **/
 	private String getResponse() throws IOException {
 		String s = socketIn.readLine();
 		System.out.println(s);
 		return s;
 	}
 
+	/** using switch to call different methods of RegistrationApp class **/
 	private void application() {
 
 		String[] answer;
-		String line;
 		int choice = 0;
 
 		while (choice != 7) {
