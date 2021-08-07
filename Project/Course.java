@@ -65,5 +65,9 @@ public class Course {
 		else
 			return offeringList.get(i);
 	}
+	
+	public ArrayList<CourseOffering> getOfferingList() {
+		return offeringList;
+	}
 
 }

@@ -146,7 +146,9 @@ public class DBManager {
 			studentList.add(st);
 		}
 		
-		
+		ra1.close();
+		ra2.close();
+		ra3.close();
 		return studentList;
 	}
 	
@@ -172,13 +174,73 @@ public class DBManager {
 					}
 				}
 				
-				
-				
-				
+					
 			}
 			
 		}
 		
+	}
+	
+	public void saveDB(ArrayList<Student> slist, ArrayList<Course> clist) throws IOException {
+		
+		RandomAccessFile ra1 = null;
+		RandomAccessFile ra2 = null;
+		RandomAccessFile ra3 = null;
+		RandomAccessFile ra4 = null;
+		
+		try {
+			ra1 = new RandomAccessFile("courses.txt", "rw");
+			ra2 = new RandomAccessFile("students.txt", "rw");
+			ra3 = new RandomAccessFile("courseReg.txt", "rw");
+			ra4 = new RandomAccessFile("studentReg.txt", "rw");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		ra1.setLength(0);
+		ra2.setLength(0);
+		ra3.setLength(0);
+		ra4.setLength(0);
+		
+		for (int i = 0; i < clist.size(); i++) {
+			ra1.writeChars(clist.get(i).getCourseName() + ";" + clist.get(i).getCourseNum());
+			for (int j = 0; j < clist.get(i).getOfferingList().size(); i++) {
+				ra1.writeChars(";" + clist.get(i).getCourseOfferingAt(j).getSecNum() + ";" + clist.get(i).getCourseOfferingAt(j).getSecCap());
+			}
+			ra1.writeChars("\n");
+		}
+		
+		for (int i = 0; i < slist.size(); i++) {
+			ra2.writeChars(slist.get(i).getStudentName() + ";" + slist.get(i).getStudentId() + "\n");
+		}
+		
+		for (int i = 0; i < clist.size(); i++) {
+			for (int j = 0; j < clist.get(i).getOfferingList().size(); j++) {
+				ra3.writeChars(clist.get(i).getCourseName() + ";" + clist.get(i).getCourseNum() + ";"
+						       + clist.get(i).getCourseOfferingAt(j).getSecNum());
+				for (int a = 0; a < clist.get(i).getCourseOfferingAt(j).getOfferingRegList().size(); a++) {
+					ra3.writeChars(";" + clist.get(i).getCourseOfferingAt(j).getOfferingRegList().get(a).getTheStudent().getStudentId());
+				}
+			}
+			
+			ra3.writeChars("\n");
+		}
+		
+		for (int i = 0; i < slist.size(); i++) {
+			ra4.writeInt(slist.get(i).getStudentId());
+			for (int j = 0; j < slist.get(i).getStudentRegList().size(); j++) {
+				ra4.writeChars(";" + slist.get(i).getStudentRegList().get(j).getTheOffering().getTheCourse().getCourseName());
+				ra4.writeChars(";" + slist.get(i).getStudentRegList().get(j).getTheOffering().getTheCourse().getCourseNum());
+				ra4.writeChars(";" + slist.get(i).getStudentRegList().get(j).getTheOffering().getSecNum());
+			}
+			ra4.writeChars("\n");
+		}
+		
+		ra1.close();
+		ra2.close();
+		ra3.close();
+		ra4.close();
+	
 	}
 	
 }
