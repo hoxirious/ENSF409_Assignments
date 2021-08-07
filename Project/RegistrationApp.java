@@ -1,39 +1,67 @@
 import java.io.*;
 import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class RegistrationApp.
+ */
 public class RegistrationApp implements Runnable {
 
+	/** The socket out. */
 	private PrintWriter socketOut;
+	
+	/** The socket in. */
 	private BufferedReader socketIn;
 
+	/** The cat. */
 	private CourseCatalogue cat;
 
+	/** The slist. */
 	ArrayList<Student> slist;
+	
+	/** The clist. */
 	ArrayList<Course> clist;
-	
+
+	/** The db. */
 	DBManager db;
+	
+	/** The reg. */
 	Registration reg;
-	
-	
-    /**creating student list and course list, and register from the database**/
+
+	/**
+	 *  creating student list and course list, and register from the database *.
+	 *
+	 * @param in the in
+	 * @param out the out
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public RegistrationApp(BufferedReader in, PrintWriter out) throws IOException {
 		socketOut = out;
 		socketIn = in;
 
 		cat = new CourseCatalogue();
-		
+
 		db = new DBManager();
 
 		slist = db.readFromDB();
 		clist = db.readFromDataBase();
 	}
 
-	/**each client is a thread, and this run function call the methods in RegistrationApp class**/
+	/**
+	 * each client is a thread, and this run function call the methods in
+	 * RegistrationApp class.
+	 */
 	public void run() {
 		application();
 	}
 
-	/**this method is used to find the course in course catalouge using course name and course num as arguments**/
+	/**
+	 * this method is used to find the course in course catalouge using course name
+	 * and course num as arguments.
+	 *
+	 * @param courseName the course name
+	 * @param courseNum the course num
+	 */
 	public void searchCourse(String courseName, int courseNum) {
 		Course c = cat.searchCat(courseName.toUpperCase(), courseNum);
 		if (c != null)
@@ -41,18 +69,18 @@ public class RegistrationApp implements Runnable {
 		else
 			socketOut.println("Course not found!\n");
 	}
-	
-	/**this method is used to saving student list, course list and registration lists into database files**/
-	public void saveToDatabase () {
-		try {
-			db.saveDB(slist, clist);			
-			socketOut.println("Successfully save to the database");
-		} catch (Exception e) {
-			socketOut.println("Failed! Cannot save to the database");
-		}
-	}
-	
-   /**adding a course to student course (based on Lab 3 ex 2)**/
+
+	/**
+	 * this method is used to saving student list, course list and registration
+	 * lists into database files.
+	 * adding a course to student course (based on Lab 3 ex 2)
+	 *
+	 * @param studentId the student id
+	 * @param courseName the course name
+	 * @param courseNum the course num
+	 * @param secNum the sec num
+	 */
+
 	public void addStudentReg(int studentId, String courseName, int courseNum, int secNum) {
 		int index = -1;
 		for (int i = 0; i < slist.size(); i++) {
@@ -63,15 +91,13 @@ public class RegistrationApp implements Runnable {
 
 		/** check if student is in the list **/
 		if (index == -1) {
-			socketOut.println("No student found!");
-			System.out.println("No student found!");
+			socketOut.println("No student found! \n");
 			return;
 		}
 
 		/** check if student has already taken 6 courses **/
 		if (slist.get(index).getStudentRegList().size() == 6) {
-			socketOut.println("This student has 6 course already");
-			System.out.println("This student has 6 course already");
+			socketOut.println("This student has 6 course already \n");
 			return;
 		}
 
@@ -79,32 +105,36 @@ public class RegistrationApp implements Runnable {
 
 		/** check if course is in the Catalouge **/
 		if (c == null) {
-			socketOut.println("Course not Found!");
-			System.out.println("Course not Found!");
+			socketOut.println("Course not Found! \n");
 			return;
 		}
 
 		/** check if student has taken the course **/
 		if (slist.get(index).checkdupes(c) == true) {
-			socketOut.println("This student has already taken the course");
-			System.out.println("This student has already taken the course");
+			socketOut.println("This student has already taken the course \n");
 			return;
 		}
 
 		/** check if student is qualified for the course **/
 		if (slist.get(index).checkpre(c) == false) {
-			socketOut.println("This student is not qualified for the course");
-			System.out.println("This student is not qualified for the course");
+			socketOut.println("This student is not qualified for the course \n");
 			return;
 		}
 
 		Registration regi = new Registration();
 		regi.completeRegistration(slist.get(index), c.getCourseOfferingAt(secNum - 1));
 
-		socketOut.println("The course has been added to the student course");
+		socketOut.println("The course has been added to the student course \n");
 	}
-	
-    /** deleting a course from student courses **/
+
+	/**
+	 *  deleting a course from student courses *.
+	 *
+	 * @param studentId the student id
+	 * @param courseName the course name
+	 * @param courseNum the course num
+	 * @param secNum the sec num
+	 */
 	public void delStudentReg(int studentId, String courseName, int courseNum, int secNum) {
 		int index = -1;
 		for (int i = 0; i < slist.size(); i++) {
@@ -113,15 +143,15 @@ public class RegistrationApp implements Runnable {
 			}
 		}
 
-		/** check if student exist**/
+		/** check if student exist **/
 		if (index == -1) {
-			socketOut.println("No student found!");
+			socketOut.println("No student found! \n");
 			return;
 		}
 
 		/** check if this student has taken any course **/
 		if (slist.get(index).getStudentRegList().size() == 0) {
-			socketOut.println("This student has not taken any course");
+			socketOut.println("This student has not taken any course \n");
 			return;
 		}
 
@@ -129,28 +159,34 @@ public class RegistrationApp implements Runnable {
 
 		/** check if the course is in the list **/
 		if (c == null) {
-			socketOut.println("Course not Found!");
+			socketOut.println("Course not Found! \n");
 			return;
 		}
 
 		/** check if the student take the course **/
 		if (slist.get(index).checkdupes(c) == false) {
-			socketOut.println("This student did not take the course");
+			socketOut.println("This student did not take the course \n");
 			return;
 		}
-		
+
 		Registration regi = new Registration();
 
 		regi.cancelRegistration(slist.get(index), c.getCourseOfferingAt(secNum - 1));
-		socketOut.println("The course has been removed from the student course");
+		socketOut.println("The course has been removed from the student course \n");
 	}
 
-	/** showing course catalogue **/
+	/**
+	 *  showing course catalogue *.
+	 */
 	public void showCatalogue() {
 		socketOut.println(cat);
 	}
 
-	/** showing student infomation **/
+	/**
+	 *  showing student infomation *.
+	 *
+	 * @param studentId the student id
+	 */
 	public void showStudent(int studentId) {
 		int index = -1;
 		for (int i = 0; i < slist.size(); i++) {
@@ -160,7 +196,7 @@ public class RegistrationApp implements Runnable {
 		}
 
 		if (index == -1) {
-			socketOut.println("No student found!");
+			socketOut.println("No student found! \n");
 			return;
 		}
 
@@ -168,58 +204,91 @@ public class RegistrationApp implements Runnable {
 
 	}
 
-	/** getting response from client-side **/
+	/**
+	 * Cancel handle.
+	 */
+	private void cancelHandle() {
+		socketOut.println("Cancel \n");
+	}
+
+	/**
+	 *  getting response from client-side *.
+	 *
+	 * @return the response
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	private String getResponse() throws IOException {
 		String s = socketIn.readLine();
-		System.out.println(s);
 		return s;
 	}
 
-	/** using switch to call different methods of RegistrationApp class **/
+	/**
+	 *  using switch to call different methods of RegistrationApp class *.
+	 */
 	private void application() {
-
+		String line;
 		String[] answer;
 		int choice = 0;
 
-		while (choice != 7) {
+		while (choice != 6) {
 
 			try {
 				choice = Integer.parseInt(socketIn.readLine());
-				System.out.println(choice);
 				switch (choice) {
 
 				case 1:
-					answer = getResponse().split("\\s+");
-					searchCourse(answer[0], Integer.parseInt(answer[1]));
-					break;
+					line = getResponse();
+					if (line.equals("CANCEL 0")) {
+						cancelHandle();
+						break;
+					} else {
+						answer = line.split("\\s+");
+						searchCourse(answer[0], Integer.parseInt(answer[1]));
+						break;
+					}
 				case 2:
-					answer = getResponse().split("\\s+");
-					addStudentReg(Integer.parseInt(answer[0]), answer[1].toUpperCase(), Integer.parseInt(answer[2]),
-							Integer.parseInt(answer[3]));
-					break;
+					line = getResponse();
+					if (line.equals("0 CANCEL 0 0")) {
+						cancelHandle();
+						break;
+					} else {
+						answer = line.split("\\s+");
+						addStudentReg(Integer.parseInt(answer[0]), answer[1].toUpperCase(), Integer.parseInt(answer[2]),
+								Integer.parseInt(answer[3]));
+						break;
+					}
 
 				case 3:
-					answer = getResponse().split("\\s+");
-					delStudentReg(Integer.parseInt(answer[0]), answer[1].toUpperCase(), Integer.parseInt(answer[2]),
-							Integer.parseInt(answer[3]));
-					break;
+					line = getResponse();
+					if (line.equals("0 CANCEL 0 0")) {
+						cancelHandle();
+						break;
+					} else {
+						answer = line.split("\\s+");
+						delStudentReg(Integer.parseInt(answer[0]), answer[1].toUpperCase(), Integer.parseInt(answer[2]),
+								Integer.parseInt(answer[3]));
+						break;
+					}
 
 				case 4:
 					showCatalogue();
 					break;
 
 				case 5:
-					answer = getResponse().split("\\s+");
-					showStudent(Integer.parseInt(answer[0]));
-					break;
+					line = getResponse();
+					if (line.equals("0")) {
+						cancelHandle();
+						break;
+					} else {
+						answer = line.split("\\s+");
+						showStudent(Integer.parseInt(answer[0]));
+						break;
+					}
+
 				case 6:
-					saveToDatabase();
-					break;
-					
-				case 7:
 					socketOut.println("QUIT");
 					break;
-				default: 
+				default:
 					System.exit(0);
 				}
 

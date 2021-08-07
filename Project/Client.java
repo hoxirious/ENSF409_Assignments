@@ -8,8 +8,7 @@ public class Client {
 	private BufferedReader socketIn;
 	private BufferedReader stdIn;
 
-	
-	/**constructor creating a new Client-side Application**/
+	/** constructor creating a new Client-side Application **/
 	public Client(String serverName, int portNumber) {
 
 		try {
@@ -26,16 +25,16 @@ public class Client {
 		}
 	}
 
-	/**creating a communication between Client and Server of the application**/
+	/** creating a communication between Client and Server of the application **/
 	public void communicate() {
 		RegistrationGUI gui = new RegistrationGUI(socketIn, socketOut);
 		String line = "";
-		
+
 		while (!line.contentEquals("QUIT")) {
 
-			}
-		
-		/**closing the connection**/
+		}
+
+		/** closing the connection **/
 		try {
 			if (Integer.parseInt(socketIn.readLine()) == 6) {
 				stdIn.close();
@@ -47,7 +46,7 @@ public class Client {
 		}
 	}
 
-	/**calling constructor and communicate method**/
+	/** calling constructor and communicate method **/
 	public static void main(String[] args) throws IOException {
 		Client myClient = new Client("localhost", 9898);
 		myClient.communicate();

@@ -3,20 +3,34 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
 //This class is simulating a database for our
+/**
+ * The Class DBManager.
+ */
 //program
 public class DBManager {
 
+	/** The course list. */
 	ArrayList<Course> courseList;
+	
+	/** The student list. */
 	ArrayList<Student> studentList;
 
-	/** constructor **/
+	/**
+	 *  constructor *.
+	 */
 	public DBManager() {
 		courseList = new ArrayList<Course>();
 		studentList = new ArrayList<Student>();
 	}
 
-	/** creating course list from the database **/
+	/**
+	 *  creating course list from the database *.
+	 *
+	 * @return the array list of Course
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public ArrayList<Course> readFromDataBase() throws IOException {
 
 		RandomAccessFile ra1 = null;
@@ -36,17 +50,15 @@ public class DBManager {
 		String[] studentInfo;
 
 		while ((temp = ra2.readLine()) != null) {
-			
-			System.out.println("Students:" + temp);			
-			studentInfo = temp.split(";");		
-			Student s = new Student(studentInfo[0],Integer.parseInt(String.valueOf(studentInfo[1])));
+
+			studentInfo = temp.split(";");
+			Student s = new Student(studentInfo[0], Integer.parseInt(String.valueOf(studentInfo[1])));
 
 			studentList.add(s);
 
 		}
 
 		while ((temp = ra1.readLine()) != null) {
-			System.out.println("Courses: "+ temp.replaceAll("\\s+", ""));
 			courseInfo = temp.replaceAll("\\s+", "").split(";");
 
 			Course c = new Course(courseInfo[0], Integer.parseInt(courseInfo[1]));
@@ -69,14 +81,19 @@ public class DBManager {
 		ra1.close();
 		ra2.close();
 		ra3.close();
-		for(Course c : courseList) {
-		System.out.println(c);
-		}
-		
+
 		return courseList;
 	}
 
-	/** register students into the courses from database **/
+	/**
+	 *  register students into the courses from database *.
+	 *
+	 * @param course the array list of Course
+	 * @param slist the array list of Student
+	 * @param arg the RandomAccess file
+	 * @param secNum the section number
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public void register(Course course, ArrayList<Student> slist, RandomAccessFile arg, int secNum) throws IOException {
 		String tempR;
 		String[] regInfo;
@@ -102,7 +119,12 @@ public class DBManager {
 
 	}
 
-	/** creating student list from the database **/
+	/**
+	 *  creating student list from the database *.
+	 *
+	 * @return the array list of Student
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public ArrayList<Student> readFromDB() throws IOException {
 
 		RandomAccessFile ra1 = null;
@@ -153,13 +175,17 @@ public class DBManager {
 		ra1.close();
 		ra2.close();
 		ra3.close();
-		for(Student c : studentList) {
-			System.out.println(c);
-			}
 		return studentList;
 	}
 
-	/** register courses into student courses from the database **/
+	/**
+	 *  register courses into student courses from the database *.
+	 *
+	 * @param arg1 the Student
+	 * @param arg2 the Array of Course
+	 * @param arg3 the RandomAccessFile
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public void studentReg(Student arg1, ArrayList<Course> arg2, RandomAccessFile arg3) throws IOException {
 
 		String tempR;
@@ -189,96 +215,4 @@ public class DBManager {
 		}
 
 	}
-
-	/**
-	 * saving course list, student list and register list into database (NOT WORKING
-	 * - maybe try writeUTF)
-	 **/
-	public void saveDB(ArrayList<Student> slist, ArrayList<Course> clist) throws IOException {
-
-		RandomAccessFile ra1 = null;
-		RandomAccessFile ra2 = null;
-		RandomAccessFile ra3 = null;
-		RandomAccessFile ra4 = null;
-
-		try {
-			ra1 = new RandomAccessFile("courses.txt", "rw");
-			ra2 = new RandomAccessFile("students.txt", "rw");
-			ra3 = new RandomAccessFile("courseReg.txt", "rw");
-			ra4 = new RandomAccessFile("studentReg.txt", "rw");
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-
-			
-		
-		try {
-			for (int i = 0; i < clist.size(); i++) {
-				ra1.writeChars(clist.get(i).getCourseName() + ";" + clist.get(i).getCourseNum());
-				for (int j = 0; j < clist.get(i).getOfferingList().size(); j++) {
-					ra1.writeChars(";" + clist.get(i).getCourseOfferingAt(j).getSecNum() + ";"
-							+ clist.get(i).getCourseOfferingAt(j).getSecCap());
-				}
-				ra1.writeChars("\n");	
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-
-		try {
-
-			for (int i = 0; i < slist.size(); i++) {
-				ra2.writeChars(slist.get(i).getStudentName() + ";" + slist.get(i).getStudentId() + "\n");
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-
-		try {
-
-			for (int i = 0; i < clist.size(); i++) {
-				for (int j = 0; j < clist.get(i).getOfferingList().size(); j++) {
-					ra3.writeChars(clist.get(i).getCourseName() + ";" + clist.get(i).getCourseNum() + ";"
-							+ clist.get(i).getCourseOfferingAt(j).getSecNum());
-					for (int a = 0; a < clist.get(i).getCourseOfferingAt(j).getOfferingRegList().size(); a++) {
-						ra3.writeChars(";" + clist.get(i).getCourseOfferingAt(j).getOfferingRegList().get(a)
-								.getTheStudent().getStudentId());
-					}
-				}
-
-				ra3.writeChars("\n");
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-
-		try {
-
-			for (int i = 0; i < slist.size(); i++) {
-				ra4.writeChars(String.valueOf(slist.get(i).getStudentId()));
-				for (int j = 0; j < slist.get(i).getStudentRegList().size(); j++) {
-					ra4.writeChars(";"
-							+ slist.get(i).getStudentRegList().get(j).getTheOffering().getTheCourse().getCourseName());
-					ra4.writeChars(";"
-							+ slist.get(i).getStudentRegList().get(j).getTheOffering().getTheCourse().getCourseNum());
-					ra4.writeChars(";" + slist.get(i).getStudentRegList().get(j).getTheOffering().getSecNum());
-				}
-				ra4.writeChars("\n");
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-
-		try {
-
-			ra1.close();
-			ra2.close();
-			ra3.close();
-			ra4.close();
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-
-	}
-
 }

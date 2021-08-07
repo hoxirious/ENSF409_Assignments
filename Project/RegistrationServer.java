@@ -8,17 +8,33 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class RegistrationServer.
+ */
 public class RegistrationServer {
 	
 
+		/** The a socket. */
 		private Socket aSocket;
+		
+		/** The server socket. */
 		private ServerSocket serverSocket;
+		
+		/** The socket out. */
 		private PrintWriter socketOut;
+		
+		/** The socket in. */
 		private BufferedReader socketIn;
 		
+		/** The pool. */
 		private ExecutorService pool;
 
-		/** Constructor creating Server-side application **/
+		/**
+		 *  Constructor creating Server-side application *.
+		 *
+		 * @param port the port
+		 */
 		public RegistrationServer(int port) {
 			try {
 				serverSocket = new ServerSocket(port);
@@ -29,7 +45,9 @@ public class RegistrationServer {
 			}
 		}
 	
-	/** using client as thread to run the server **/
+	/**
+	 *  using client as thread to run the server *.
+	 */
 	public void runServer() {
 		try {
 			while(true) {
@@ -49,7 +67,9 @@ public class RegistrationServer {
 		closeConnection();
 	}
 	
-	/** close the connection between client and server **/
+	/**
+	 *  close the connection between client and server *.
+	 */
 	private void closeConnection() {
 		try {
 			socketIn.close();
@@ -59,7 +79,12 @@ public class RegistrationServer {
 		}
 	}
 	
-	/** main methods calling constructor and run server method**/
+	/**
+	 *  main methods calling constructor and run server method*.
+	 *
+	 * @param args the arguments
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public static void main(String[] args) throws IOException {
 		RegistrationServer myServer = new RegistrationServer(9898);
 		myServer.runServer();
