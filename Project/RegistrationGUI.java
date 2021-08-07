@@ -221,19 +221,24 @@ public class RegistrationGUI extends JFrame {
 
 		
 		saveDatabaseBtn.addActionListener((ActionEvent e) -> {
-			System.out.println(e.getActionCommand());
+			socketOut.println("6");
+			try {
+				mainScreen.setText(socketIn.readLine());
+			}catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		});
 			
 		this.addWindowListener(new WindowAdapter() {
 
             @Override
             public void windowClosing(WindowEvent e) {
-                socketOut.println("6");
+                socketOut.println("7");
             }
 
             @Override
             public void windowClosed(WindowEvent e) {
-            	socketOut.println("6");
+            	socketOut.println("7");
             }
 
         });

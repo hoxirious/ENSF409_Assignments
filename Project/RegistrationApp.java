@@ -9,6 +9,7 @@ public class RegistrationApp implements Runnable {
 	private CourseCatalogue cat;
 
 	ArrayList<Student> slist;
+	ArrayList<Course> clist;
 	
 	DBManager db;
 	Registration reg;
@@ -22,6 +23,7 @@ public class RegistrationApp implements Runnable {
 		db = new DBManager();
 
 		slist = db.readFromDB();
+		clist = db.readFromDataBase();
 	}
 
 	public void run() {
@@ -34,6 +36,15 @@ public class RegistrationApp implements Runnable {
 			socketOut.println(c);
 		else
 			socketOut.println("Course not found!\n");
+	}
+	
+	public void saveToDatabase () {
+		try {
+			db.saveDB(slist, clist);			
+			socketOut.println("Successfully save to the database");
+		} catch (Exception e) {
+			socketOut.println("Failed! Cannot save to the database");
+		}
 	}
 
 	public void addStudentReg(int studentId, String courseName, int courseNum, int secNum) {
@@ -154,7 +165,7 @@ public class RegistrationApp implements Runnable {
 		String line;
 		int choice = 0;
 
-		while (choice != 6) {
+		while (choice != 7) {
 
 			try {
 				choice = Integer.parseInt(socketIn.readLine());
@@ -186,6 +197,10 @@ public class RegistrationApp implements Runnable {
 					showStudent(Integer.parseInt(answer[0]));
 					break;
 				case 6:
+					saveToDatabase();
+					break;
+					
+				case 7:
 					socketOut.println("QUIT");
 					break;
 				default: 
