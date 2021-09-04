@@ -4,7 +4,7 @@ Hy Huynh: hy.huynh@ucalgary.ca
 Instrusction: Have 2 command prompt ready:
   - The first one you should run:
     + javac Course.java CourseCatalogue.java CourseOffering.java DBManager.java Registration.java RegistrationApp.java RegistrationServer.java Student.java
-    + java RegistrationApp
+    + java RegistrationServer
   - The second one you should run:
     + javac Client.java RegistrationGUI.java
     + java Client
